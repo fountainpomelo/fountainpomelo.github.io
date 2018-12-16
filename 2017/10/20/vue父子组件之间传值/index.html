@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-cn">
   <head><meta name="generator" content="Hexo 3.8.0">
     
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
 
@@ -17,7 +22,12 @@
 
 
 
-  <meta name="keywords" content="vue,">
+  <meta name="keywords" content="前端开发，阴阳师，云之遏，阿嘤嘤嘤酱">
+
+
+
+
+
 
 
 
@@ -28,111 +38,116 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=1.1">
+  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
 
 
 
 <link rel="canonical" href="http://fountainyys.cn/2017/10/20/vue父子组件之间传值/">
 
 
-<meta name="description" content="之前在做项目的时候遇到，点击不同的标签页，展示对应标签的内容。 本文主要涉及  element-ui的标签页 vue父子传参  我们可以想到的最快的方法，就是：给标签和其对应的内容块以id方式联系起来，当前标签id在active时让该id对应的内容区块display:block 那现在我们用 vue + element-ui，element-ui本身已经帮我们封装好了标签页组件，直接拿来用： 12">
-<meta name="keywords" content="vue">
-<meta property="og:type" content="article">
-<meta property="og:title" content="vue父子之间传参 || element-ui动态增减标签页传不同的组件">
-<meta property="og:url" content="http://fountainyys.cn/2017/10/20/vue父子组件之间传值/index.html">
-<meta property="og:site_name" content="方汀">
-<meta property="og:description" content="之前在做项目的时候遇到，点击不同的标签页，展示对应标签的内容。 本文主要涉及  element-ui的标签页 vue父子传参  我们可以想到的最快的方法，就是：给标签和其对应的内容块以id方式联系起来，当前标签id在active时让该id对应的内容区块display:block 那现在我们用 vue + element-ui，element-ui本身已经帮我们封装好了标签页组件，直接拿来用： 12">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2018-12-16T09:54:07.797Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue父子之间传参 || element-ui动态增减标签页传不同的组件">
-<meta name="twitter:description" content="之前在做项目的时候遇到，点击不同的标签页，展示对应标签的内容。 本文主要涉及  element-ui的标签页 vue父子传参  我们可以想到的最快的方法，就是：给标签和其对应的内容块以id方式联系起来，当前标签id在active时让该id对应的内容区块display:block 那现在我们用 vue + element-ui，element-ui本身已经帮我们封装好了标签页组件，直接拿来用： 12">
 
-
-<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=1.1">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
 
 
 
 
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
 
-<script type="text/javascript">
-  var themeConfig = {
-    fancybox: {
-      enable: false
-    },
-  };
+
+
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
 </script>
 
 
 
 
-  
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?true";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
 
 
-  <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'true', 'auto');
-        ga('send', 'pageview');
-  </script>
 
 
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
 
     <title> vue父子之间传参 || element-ui动态增减标签页传不同的组件 - 方汀 </title>
   </head>
 
-  <body>
-    <div id="page">
-      <header id="masthead"><div class="site-header-inner">
-    <h1 class="site-title">
-        <a href="/fountainpomelo.github.io/." class="logo">方汀</a>
-    </h1>
-
-    <nav id="nav-top">
-        
-            <ul id="menu-top" class="nav-top-items">
-                
-                    <li class="menu-item">
-                        <a href="/fountainpomelo.github.io/archives">
-                            
-                            
-                                Archives
-                            
-                        </a>
-                    </li>
-                
-                    <li class="menu-item">
-                        <a href="/fountainpomelo.github.io/about">
-                            
-                            
-                                About
-                            
-                        </a>
-                    </li>
-                
-            </ul>
-        
-  </nav>
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/fountainpomelo.github.io/." class="logo">方汀</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </div>
 
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/fountainpomelo.github.io/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/fountainpomelo.github.io/." class="logo">方汀</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
       </header>
-      <div id="content">
-        
-    <div id="primary">
-        
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
@@ -141,16 +156,29 @@
         
       </h1>
 
-      <time class="post-time">
-          10月 20 2017
-      </time>
+      <div class="post-meta">
+        <span class="post-time">
+          2017-10-20
+        </span>
+        
+        
+      </div>
     </header>
 
-
-
     
-            <div class="post-content">
-            <p>之前在做项目的时候遇到，点击不同的标签页，展示对应标签的内容。</p>
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#引入子组件"><span class="toc-text">引入子组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把内容部分-it-content-改成component组件形式"><span class="toc-text">把内容部分 it.content 改成component组件形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新增标签页-addTab"><span class="toc-text">新增标签页(addTab())</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#父子组件之间传参"><span class="toc-text">父子组件之间传参</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#父组件传递给子组件"><span class="toc-text">父组件传递给子组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子组件传递给父组件"><span class="toc-text">子组件传递给父组件</span></a>
+    </li></ol></li></div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>之前在做项目的时候遇到，点击不同的标签页，展示对应标签的内容。</p>
 <p>本文主要涉及</p>
 <ul>
 <li>element-ui的标签页</li>
@@ -188,19 +216,44 @@
 </ul>
 <p>欢迎提出建议。</p>
 
-            </div>
-          
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://fountainyys.cn">Fountain</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://fountainyys.cn/2017/10/20/vue父子组件之间传值/">http://fountainyys.cn/2017/10/20/vue父子组件之间传值/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
 
     
       <footer class="post-footer">
-		
-		<div class="post-tags">
-		  
-			<a href="/fountainpomelo.github.io/tags/vue/">vue</a>
-		  
-		</div>
-		
-
+        
+          <div class="post-tags">
+            
+              <a href="/fountainpomelo.github.io/tags/vue/">vue</a>
+            
+          </div>
+        
         
         
   <nav class="post-nav">
@@ -214,42 +267,94 @@
     
   </nav>
 
-        
-  <div class="comments" id="comments">
+
+      </footer>
     
-    <div style="text-align:center;">
-        <button class="btn" id="load-disqus" onclick="disqus.load();">加载 Disqus 评论</button>
-    </div>
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
     
   </div>
 
 
-      </footer>
-    
-  </article>
+        </div>
+      </main>
 
-    </div>
+      <footer id="footer" class="footer">
 
-      </div>
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
 
-      <footer id="colophon"><span class="copyright-year">
     
-        &copy;
+      
+      <a href="/fountainpomelo.github.io/atom.xml" class="iconfont icon-rss" title="rss"></a>
     
-        2015 -
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
     
     2018
-    <span class="footer-author">Fountain.</span>
-    <span class="power-by">
-        由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a> 强力驱动
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
     </span>
-</span>
+    <span class="author">Fountain</span>
+  </span>
+</div>
 
       </footer>
 
@@ -257,53 +362,49 @@
         <i class="iconfont icon-up"></i>
       </div>
     </div>
+
     
-
-<script type="text/javascript">
-  var disqus_shortname = 'true';
-  var disqus_identifier = '2017/10/20/vue父子组件之间传值/';
-
-  var disqus_title = "vue父子之间传参 || element-ui动态增减标签页传不同的组件";
-
-
-  var disqus = {
-    load : function disqus(){
-        if(typeof DISQUS !== 'object') {
-          (function () {
-          var s = document.createElement('script'); s.async = true;
-          s.type = 'text/javascript';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-          }());
-          $('#load-disqus').remove(); ///加载后移除按钮
-        }
-    }
-  }
-
   
-    var disqus_config = function () {
-        this.page.url = disqus_url;
-        this.page.identifier = disqus_identifier;
-        this.page.title = disqus_title;
-    };
   
 
-</script>
+  
+
 
 
     
+  
+
+
+
+  
+  
+
 
 
 
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/jquery/jquery.min.js"></script>
   
 
   
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/slideout/slideout.js"></script>
+  
 
-    <script type="text/javascript" src="/fountainpomelo.github.io/js/src/theme.js?v=1.1"></script>
-<script type="text/javascript" src="/fountainpomelo.github.io/js/src/bootstrap.js?v=1.1"></script>
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
 
   </body>
 </html>
