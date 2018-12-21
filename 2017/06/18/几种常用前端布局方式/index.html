@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0"> 
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="flex弹性布局、rem布局、流式布局等">
+
+
+
+
+  <meta name="keywords" content="前端开发，阴阳师，云之遏，阿嘤嘤嘤酱">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/fountainpomelo.github.io/default" title="方汀">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://fountainyys.cn/2017/06/18/几种常用前端布局方式/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 几种常用前端布局方式 - 方汀 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/fountainpomelo.github.io/." class="logo">方汀</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/fountainpomelo.github.io/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Archives
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/fountainpomelo.github.io/." class="logo">方汀</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          几种常用前端布局方式
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-06-18
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#flex"><span class="toc-text">flex弹性布局 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#static"><span class="toc-text">静态布局 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#guding"><span class="toc-text">固定页面宽度 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Liquid"><span class="toc-text">百分比布局（流式布局） </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Responsive"><span class="toc-text"> 响应式布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rem"><span class="toc-text">rem布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#viewport"><span class="toc-text">viewport缩放</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <ul>
+<li>前言<ul>
+<li><a href="#flex">flex</a></li>
+<li><a href="#static">静态布局</a></li>
+<li><a href="#guding">固定页面宽度</a></li>
+<li><a href="#Liquid">百分比布局（流式布局）</a></li>
+<li><a href="#Responsive">响应式布局</a></li>
+<li><a href="#rem">rem布局</a></li>
+<li><a href="#viewport">viewport</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="flex">flex弹性布局 </h1><br>给父元素设置 <code>display:flex</code>，容器就具有了两条轴，水平的主轴和垂直的交叉轴。<br><br>👉 <a href="https://www.css88.com/demo/flexbox-playground/" target="_blank" rel="noopener">flexbox在线演示</a><br><br><br>- flex结合单位vh，让容器充满整个屏幕高度或者剩余屏幕高度(上面的div根据内容自动高度，下面的div自动铺满剩余高度)<br>    - vh ： 相对于视口（viewport）的高度，视口被均分为100单位的vh；<br>    - 代码<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    height: 100vh; //充满整个屏幕高度</span><br><span class="line">    width: 100%;</span><br><span class="line">    display: flex;  //flex布局</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    background-color: antiquewhite</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.son1 &#123;</span><br><span class="line">    background-color: burlywood;</span><br><span class="line">    flex: 1; //自动铺满剩余高度</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>👇 再说说其他布局<br><br><h1 id="static">静态布局 </h1>
+
+<p>最原始的布局方式，就是你把窗口缩小，页面及字体不做变化，网页最外层容器有固定的大小（例如：<code>min-width:1000px;</code>），页面所有的内容以该容器为准，超出宽高的部分滚动。</p>
+<p>所以当pc端是这种布局，但是移动端也需要查看时，pc页面会显得很丑，真的不合适啊，通常又会给移动端设计一套，通常会限制最大的宽度，超过了则以最大宽度居中显示，即楼下👇所说的固定页面宽度的做法，用另一个域名呈现，一般管它叫做m站。</p>
+<h1 id="guding">固定页面宽度 </h1>
+
+<p>直接固定页面的宽度，超出部分就留白，这样的做法对于前端来说十分友好，不用绞尽脑汁想着适配，但是这样的做法对用户来说十分不好看且不友好，在大屏下会显得页面特别小。</p>
+<h1 id="Liquid">百分比布局（流式布局） </h1>
+
+<p>顾名思义，百分比。随着屏幕的改变，页面的布局像液体一样流动，没有发生大的变化。</p>
+<h1 id="Responsive"> 响应式布局</h1><br>- 原理<br>通过查询screen的宽度来指定某个宽度区间的网页布局 (CSS3 media query)<br><br>即一个网站兼容多个终端，适用于中小门户。<br>- 原因（相对公司）<br>1. 移动端屏幕越来越大<br>2. 提高用户体验<br>3. 降低开发和运营成本，方便数据维护<br>4. 不同的网址不利于搜索引擎优化收录，影响网站搜索排名<br><br>- 栗子<br><code>@media screen and (max-width:480px){ }</code><br><code>@media screen and (min-width: 992px) and (max-width: 1200px){ }</code><br><br><br>- 背景图片自适应 图片失真<br>  有时会遇到适配时在小屏上只展示图片缩略图，大屏才展示大图<br>    backgroundsize设置 为原图片的一半 50%<br>    backgroundposition 设置 为本应该设置的一半<br><br><h1 id="rem">rem布局</h1>
+
+<p>rem 在webapp下作用尤其突出</p>
+<ul>
+<li>单位<br>px 是一个绝对单位，特别死<br>em（font size of the element）相对于父元素的字体大小<br>rem (font size of the root element)单位是基于根元素&lt; html &gt;的字体大小，宽高内容都能自适应</li>
+</ul>
+<ul>
+<li>JS配合less去动态计算根元素的font-size，这样的好处是所有设备分辨率都能兼容适配<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">@charset &quot;utf-8&quot;;</span><br><span class="line"></span><br><span class="line">@psdWidth: 750;</span><br><span class="line">@baseSize: 100;</span><br><span class="line">@bs: 100rem;</span><br><span class="line">@deviceWidthList: 320px, 360px, 375px, 384px, 400px, 414px, 424px, 450px, 480px, 540px, 640px, 720px, 750px, 768px;</span><br><span class="line"></span><br><span class="line">// less fn</span><br><span class="line"></span><br><span class="line">.adapterFuc(@index) when (@index &lt;=length(@deviceWidthList)) &#123;  </span><br><span class="line">    @media (min-width: extract(@deviceWidthList, @index)) &#123;</span><br><span class="line">        html &#123;</span><br><span class="line">            font-size: extract(@deviceWidthList, @index)/@psdWidth*@baseSize !important;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .adapterFuc(@index+1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    .adapterFuc(1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    body&#123;</span><br><span class="line">        font-size: 24/@bs;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>此时您的less将生成一份在设备屏幕清单里对应html的font-size的css文件。</p>
+<h1 id="viewport">viewport缩放</h1>
+
+<p>在移动设备当中，浏览器和网页之间还有一层虚拟的容器，叫 viewport，只在移动设备才有，默认就存在，虚拟的容器用来承载网页的，而且主流的设备当中的viewport宽度默认是980px,可以缩放，可以设置尺寸，是否运行用户自行缩放。</p>
+<ul>
+<li>功能<br>承载网页  可以缩放  可以设置是否允许用户缩放</li>
+<li>栗子<br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=320,maximum-scale=1.3,user-scalable=no&quot;&gt;</code><br><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0&quot;&gt;</code></li>
+</ul>
+<p>使用viewport和流式布局达到移动端的适配</p>
+<ul>
+<li><ul>
+<li><strong><em>width</em></strong> 当前viewport的宽度</li>
+<li><strong><em>initial-scale</em></strong> 视口的默认的缩放比</li>
+<li><strong><em>user-scalable</em></strong> 是否运行用户自行缩放<!-- |     width   | initial-scale | user-scalable 
+| :-----------:| :------------: | :----------: 
+| 当前viewport的宽度| 视口的默认的缩放比 | 是否运行用户自行缩放 -->
+<!-- <table>
+<tbody>
+<tr><td>width</td><td>当前viewport的宽度</td></tr>
+<tr><td>initial-scale</td><td>视口的默认的缩放比</td></tr>
+<tr><td>user-scalable </td><td>是否运行用户自行缩放</td></tr></tbody>
+</table> -->
+</li>
+</ul>
+</li>
+</ul>
+<p>如果没有指定默认的缩放值，移动设备上的浏览器默认自己必须要让所有的网站都正常显示，所以会自动计算这个缩放值initial-scale，以达到当前页面不会出现横向滚动条(或者说viewport的宽度就是屏幕的宽度)的目的，此时会造成因为移动设备的viewport太窄，pc页面在移动设备挤作一团。</p>
+<p>如果给viewport设一个值，比如980，这样的话即使是那些为桌面设计的网站也能在移动浏览器上正常显示了。</p>
+<p>此时我们按照 <a href="https://www.quirksmode.org/" target="_blank" rel="noopener">PPK大神</a>的理论：（详细可以参考<a href="https://www.cnblogs.com/2050/p/3877280.html" target="_blank" rel="noopener">这篇文章</a>）</p>
+<ol>
+<li>管浏览器默认的视口叫做 <strong><em>layout viewport</em></strong>，此宽度可以使用<code>document.documentElement.clientWidth</code>获取；</li>
+<li>把浏览器可视区域的大小叫做 <strong><em>visual viewport</em></strong>，可以通<code>window.innerWidth</code>来获取;</li>
+<li>还有完美适配所有移动设备的理想viewport，叫做 <strong><em>ideal viewport</em></strong>，它并没有一个固定的尺寸，不同的设备拥有有不同的ideal viewport。</li>
+<li><ul>
+<li>visual viewport宽度 = ideal viewport宽度  / 当前缩放值</li>
+<li>当前缩放值 = ideal viewport宽度  / visual viewport宽度</li>
+</ul>
+</li>
+</ol>
+<p>由于不知道这个设备的理想宽度是多少，那么用<code>device-width</code>这个特殊值（<code>width = device-width</code>即让当前viewport的宽度等于设备的宽度）就行了，内容布局自适应，同时initial-scale=1也有把viewport的宽度设为理想宽度的作用。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="http://fountainyys.cn">Fountain</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="http://fountainyys.cn/2017/06/18/几种常用前端布局方式/">http://fountainyys.cn/2017/06/18/几种常用前端布局方式/</a>
+    </p>
+
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/fountainpomelo.github.io/2017/06/20/vue全家桶/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">我以为的vue全家桶项目</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/fountainpomelo.github.io/2016/12/11/藏品/">
+        <span class="next-text nav-default">藏品</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
+      <script type="text/javascript">
+      (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+
+          if (typeof LivereTower === 'function') { return; }
+
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
+
+          e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+      </script>
+
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>  
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+<div class="copyright">
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+   <span class="author">Fountain</span>
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">	&amp;</span>
+  <span class="theme-info">
+  
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-  <head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0"> 
     
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="vue父子之间传参 || element-ui动态增减标签页传不同的组件">
+  <meta name="description" content="之前在做项目的时候遇到，点击不同的标签页，展示对应标签的内容。">
 
 
 
@@ -111,7 +111,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -120,25 +120,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/tags/">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/categories">
-        <li class="mobile-menu-item">
-          
-          
-            分类
+            Archives
           
         </li>
       </a>
@@ -147,7 +129,7 @@
         <li class="mobile-menu-item">
           
           
-            关于
+            About
           
         </li>
       </a>
@@ -168,7 +150,7 @@
           <a class="menu-item-link" href="/fountainpomelo.github.io/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -177,25 +159,7 @@
           <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
             
             
-              归档
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
-            
-            
-              标签
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/categories">
-            
-            
-              分类
+              Archives
             
           </a>
         </li>
@@ -204,7 +168,7 @@
           <a class="menu-item-link" href="/fountainpomelo.github.io/about">
             
             
-              关于
+              About
             
           </a>
         </li>
@@ -240,7 +204,7 @@
     
     
   <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
+    <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
       <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#引入子组件"><span class="toc-text">引入子组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#把内容部分-it-content-改成component组件形式"><span class="toc-text">把内容部分 it.content 改成component组件形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新增标签页-addTab"><span class="toc-text">新增标签页(addTab())</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#父子组件之间传参"><span class="toc-text">父子组件之间传参</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#父组件传递给子组件"><span class="toc-text">父组件传递给子组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#子组件传递给父组件"><span class="toc-text">子组件传递给父组件</span></a>
     </li></ol></li></div>
@@ -256,7 +220,10 @@
 <li>element-ui的标签页</li>
 <li>vue父子传参</li>
 </ul>
-<p>我们可以想到的最快的方法，就是：给标签和其对应的内容块以id方式联系起来，当前标签id在active时让该id对应的内容区块<code>display:block</code></p>
+<p>我们可以想到的最快的方法</p>
+<ol>
+<li>使用h5的自定义属性<br>也就是让a标签的data-id或者其他等于对应切换显示的内容的盒子的id或者其他，总之让a标签和内容有关系；再使用添加、移除（.classList.add/remove()）类名的方法显示隐藏。</li>
+</ol>
 <p>那现在我们用 vue + element-ui，element-ui本身已经帮我们封装好了标签页组件，直接拿来用：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//按钮新增一个标签页btn</span><br><span class="line"></span><br><span class="line">  &lt;el-button size=&quot;small&quot; @click=&quot;addTab(editableTabsValue)&quot;&gt;  add tab &lt;/el-button&gt;</span><br><span class="line"></span><br><span class="line">//执行addTab函数其实是给editableTabs数组push一个对象</span><br><span class="line"></span><br><span class="line">  &lt;el-tabs v-model=&quot;editableTabsValue&quot; type=&quot;card&quot; editable @edit=&quot;handleTabsEdit&quot;&gt;</span><br><span class="line">    &lt;el-tab-pane :key=&quot;item.name&quot; v-for=&quot;(item, index) in editableTabs&quot; :label=&quot;item.title&quot; :name=&quot;item.name&quot;&gt;</span><br><span class="line">     </span><br><span class="line">      &#123;&#123;item.content&#125;&#125;</span><br><span class="line"></span><br><span class="line">    &lt;/el-tab-pane&gt;</span><br><span class="line">  &lt;/el-tabs&gt;</span><br></pre></td></tr></table></figure>
 <p><a href="http://element.eleme.io/#/zh-CN/component/tabs" target="_blank" rel="noopener">上面的栗子</a>我们可以看到每次切换时切换的是 <code>item.content</code> 。</p>
@@ -297,18 +264,14 @@
 
   <div class="post-copyright">
     <p class="copyright-item">
-      <span>原文作者: </span>
+      <span>Author: </span>
       <a href="http://fountainyys.cn">Fountain</a>
     </p>
     <p class="copyright-item">
-      <span>原文链接: </span>
+      <span>Link: </span>
       <a href="http://fountainyys.cn/2017/10/20/vue父子组件之间传值/">http://fountainyys.cn/2017/10/20/vue父子组件之间传值/</a>
     </p>
-    <p class="copyright-item">
-      <span>许可协议: </span>
-      
-      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
-    </p>
+
   </div>
 
 
@@ -330,10 +293,16 @@
         
   <nav class="post-nav">
     
+      <a class="prev" href="/fountainpomelo.github.io/2018/12/17/公交车碎碎念/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">公交车碎碎念</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
     
-      <a class="next" href="/fountainpomelo.github.io/2017/07/16/vue-cli项目运行一片空白/">
-        <span class="next-text nav-default">vue-cli项目运行一片空白</span>
-        <span class="prev-text nav-mobile">下一篇</span>
+    
+      <a class="next" href="/fountainpomelo.github.io/2017/07/18/图片优化/">
+        <span class="next-text nav-default">图片优化</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
@@ -386,11 +355,11 @@
     2018
    <span class="author">Fountain</span>
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
-  <span class="division">|</span>
+  <span class="division">	&amp;</span>
   <span class="theme-info">
-    主题 - 
+  
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   </span>

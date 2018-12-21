@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="联系">
+  <meta name="description" content="关于">
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://fountainyys.cn/about/">
+<link rel="canonical" href="http://fountainyys.cn/2017/07/18/图片优化/">
 
 
 
@@ -90,7 +90,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
 </script>
 
-    <title> 联系 - 方汀 </title>
+    <title> 图片优化 - 方汀 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -183,12 +183,101 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
+  
   <article class="post">
-    <div class="post-content">
-      <p>微博： <a href="https://weibo.com/u/2874806624" target="_blank" rel="noopener">方汀啊</a><br>豆瓣： <a href="https://www.douban.com/people/114544231/?dt_dapp=1" target="_blank" rel="noopener">阿嘤嘤嘤酱</a><br>邮箱： <a href="mailto:fountain_x@outlook.com" target="_blank" rel="noopener">fountain_x@outlook.com</a></p>
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          图片优化
+        
+      </h1>
 
+      <div class="post-meta">
+        <span class="post-time">
+          2017-07-18
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#图片懒加载"><span class="toc-text">图片懒加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#图片预加载"><span class="toc-text">图片预加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSSsprite"><span class="toc-text">CSSsprite</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Iconfont"><span class="toc-text">Iconfont</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Base64"><span class="toc-text">Base64</span></a></li></ol>
     </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <ul>
+<li><p>加快网页加载速度<br>浏览器接受的同时请求数是10个，如果图片过多会影响整体的视觉效果，遇到不稳定的网络带宽，简直噩梦，把图片拼接为一张大图，从而加快加载速度，加速页面渲染。</p>
+</li>
+<li><p>后期维护简单</p>
+</li>
+</ul>
+<h1 id="图片懒加载"><a href="#图片懒加载" class="headerlink" title="图片懒加载"></a>图片懒加载</h1><p>在页面上的未可视区域可以添加一个滚动条事件，判断图片位置与浏览器顶端的距离与页面的距离，如果前者小于后者，优先加载</p>
+<h1 id="图片预加载"><a href="#图片预加载" class="headerlink" title="图片预加载"></a>图片预加载</h1><p>场景为幻灯片、相册等，将当前展示图片的前一张和后一张优先下载</p>
+<h1 id="CSSsprite"><a href="#CSSsprite" class="headerlink" title="CSSsprite"></a>CSSsprite</h1><h1 id="Iconfont"><a href="#Iconfont" class="headerlink" title="Iconfont"></a>Iconfont</h1><p>其实就是文字，所以修改非常方便，可以用修改文字的方式修改</p>
+<h1 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h1><p>若场景为图片过大，可采取加载时先加载一张压缩的特别厉害的缩略图，以提高用户体验<br>如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="http://fountainyys.cn">Fountain</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="http://fountainyys.cn/2017/07/18/图片优化/">http://fountainyys.cn/2017/07/18/图片优化/</a>
+    </p>
+
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/fountainpomelo.github.io/2017/10/20/vue父子组件之间传值/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">vue父子之间传参 || element-ui动态增减标签页传不同的组件</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/fountainpomelo.github.io/2017/07/16/vue-cli项目运行一片空白/">
+        <span class="next-text nav-default">vue-cli项目运行一片空白</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
   </article>
+
 
           </div>
           

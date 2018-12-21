@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-  <head><meta name="generator" content="Hexo 3.8.0">
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0"> 
     
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -109,7 +109,7 @@
         <li class="mobile-menu-item">
           
           
-            首页
+            Home
           
         </li>
       </a>
@@ -118,25 +118,7 @@
         <li class="mobile-menu-item">
           
           
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/tags/">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/categories">
-        <li class="mobile-menu-item">
-          
-          
-            分类
+            Archives
           
         </li>
       </a>
@@ -145,7 +127,7 @@
         <li class="mobile-menu-item">
           
           
-            关于
+            About
           
         </li>
       </a>
@@ -166,7 +148,7 @@
           <a class="menu-item-link" href="/fountainpomelo.github.io/">
             
             
-              首页
+              Home
             
           </a>
         </li>
@@ -175,25 +157,7 @@
           <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
             
             
-              归档
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
-            
-            
-              标签
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/categories">
-            
-            
-              分类
+              Archives
             
           </a>
         </li>
@@ -202,7 +166,7 @@
           <a class="menu-item-link" href="/fountainpomelo.github.io/about">
             
             
-              关于
+              About
             
           </a>
         </li>
@@ -220,6 +184,96 @@
   
   <section id="posts" class="posts">
     
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2018/12/20/移动web资源整理/">移动web资源整理</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-12-20
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>更新中...</p>
+          <div class="read-more">
+            <a href="/fountainpomelo.github.io/2018/12/20/移动web资源整理/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2018/12/17/公交车碎碎念/">公交车碎碎念</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-12-17
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>周五时，下了班我坐一辆城际公交车回家，又遇见了可萌可萌的祖孙俩，我只要周五坐这趟公交，我准会遇到。</p>
+          <div class="read-more">
+            <a href="/fountainpomelo.github.io/2018/12/17/公交车碎碎念/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
       
         
   <article class="post">
@@ -247,46 +301,59 @@
       
         
         
+          
+        
 
         
           <p>之前在做项目的时候遇到，点击不同的标签页，展示对应标签的内容。</p>
-<p>本文主要涉及</p>
-<ul>
-<li>element-ui的标签页</li>
-<li>vue父子传参</li>
-</ul>
-<p>我们可以想到的最快的方法，就是：给标签和其对应的内容块以id方式联系起来，当前标签id在active时让该id对应的内容区块<code>display:block</code></p>
-<p>那现在我们用 vue + element-ui，element-ui本身已经帮我们封装好了标签页组件，直接拿来用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//按钮新增一个标签页btn</span><br><span class="line"></span><br><span class="line">  &lt;el-button size=&quot;small&quot; @click=&quot;addTab(editableTabsValue)&quot;&gt;  add tab &lt;/el-button&gt;</span><br><span class="line"></span><br><span class="line">//执行addTab函数其实是给editableTabs数组push一个对象</span><br><span class="line"></span><br><span class="line">  &lt;el-tabs v-model=&quot;editableTabsValue&quot; type=&quot;card&quot; editable @edit=&quot;handleTabsEdit&quot;&gt;</span><br><span class="line">    &lt;el-tab-pane :key=&quot;item.name&quot; v-for=&quot;(item, index) in editableTabs&quot; :label=&quot;item.title&quot; :name=&quot;item.name&quot;&gt;</span><br><span class="line">     </span><br><span class="line">      &#123;&#123;item.content&#125;&#125;</span><br><span class="line"></span><br><span class="line">    &lt;/el-tab-pane&gt;</span><br><span class="line">  &lt;/el-tabs&gt;</span><br></pre></td></tr></table></figure>
-<p><a href="http://element.eleme.io/#/zh-CN/component/tabs" target="_blank" rel="noopener">上面的栗子</a>我们可以看到每次切换时切换的是 <code>item.content</code> 。</p>
-<p>我想在这个地方传入的是html代码片段，换句话说，我更想传的是一个子组件。</p>
-<p>那么我只要在执行 <code>addTab()</code> 时把 <code>item.content</code> 换成对应的子组件就可以实现添加标签时即添加对应的子组件。</p>
-<h3 id="引入子组件"><a href="#引入子组件" class="headerlink" title="引入子组件"></a>引入子组件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import son1 from &quot;../components/list/son1&quot;;</span><br><span class="line">import son2 from &quot;../components/list/son2&quot;;</span><br></pre></td></tr></table></figure>
-<h3 id="把内容部分-it-content-改成component组件形式"><a href="#把内容部分-it-content-改成component组件形式" class="headerlink" title="把内容部分 it.content 改成component组件形式"></a>把内容部分 it.content 改成component组件形式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;component :is=&quot;item.content&quot;&gt;&lt;/component&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="新增标签页-addTab"><a href="#新增标签页-addTab" class="headerlink" title="新增标签页(addTab())"></a>新增标签页(addTab())</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.editableTabs2.push(&#123;</span><br><span class="line">  title: item.name,</span><br><span class="line">  name: newTabName,</span><br><span class="line">  type: item.type,</span><br><span class="line">  content: item.type == 1 ? son1 : son2</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>经过以上几步，可实现标签页每次新增时新增的都是对应的子组件，此时我们需要父子组件传参交互</p>
-<h1 id="父子组件之间传参"><a href="#父子组件之间传参" class="headerlink" title="父子组件之间传参"></a>父子组件之间传参</h1><p>注意下面的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;component :is=&quot;item.content&quot; v-bind:my-message=&quot;parentMsg&quot; v-on:ListChild=&quot;childByValue&quot;&gt;&lt;/component&gt;</span><br><span class="line"></span><br><span class="line">也就是</span><br><span class="line"></span><br><span class="line">&lt;component :is=&quot;item.content&quot;    :my-message=&quot;parentMsg&quot;       @ListChild=&quot;childByValue&quot;&gt;&lt;/component&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="父组件传递给子组件"><a href="#父组件传递给子组件" class="headerlink" title="父组件传递给子组件"></a>父组件传递给子组件</h2><ul>
-<li><p>在父组件中注册子组件</p>
-</li>
-<li><p><code>my-message</code>可自定义名称</p>
-</li>
-<li><p>在父组件的data里面定义<code>parentMsg</code>，把需要传给子组件的值赋给该属性</p>
-</li>
-<li><p>在子组件props中创建一个属性，用以接收父组件传过来的值 如： <code>props: [&#39;myMessage&#39;]</code> ，此时可以直接在子组件里获取到 <code>this.parentMsg</code> 就是父组件的 <code>this.parentMsg</code></p>
-</li>
-<li><p>我们避免直接修改父组件传来值 使用 <code>Object.assign</code> 进行深拷贝</p>
-</li>
-</ul>
-<h2 id="子组件传递给父组件"><a href="#子组件传递给父组件" class="headerlink" title="子组件传递给父组件"></a>子组件传递给父组件</h2><ul>
-<li><p>子组件里emit 如： <code>this.$emit(&#39;ListChild&#39;,sondatas)</code></p>
-</li>
-<li><p>可在父组件里拿到来自子组件的数据 <code>sondatas</code></p>
-</li>
-</ul>
-<p>欢迎提出建议。</p>
+          <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/10/20/vue父子组件之间传值/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
 
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2017/07/18/图片优化/">图片优化</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-07-18
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>关于</p>
+          <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/07/18/图片优化/" class="read-more-link">Read more..</a>
+          </div>
         
       
     </div>
@@ -324,14 +391,14 @@
       
         
         
+          
+        
 
         
-          <p>按照vue-cli构建的vue项目在 <code>npm start</code> 后本地 localhost 打开确是一片空白</p>
-<p>原因也许是构建后文件路径地址不对，将 <code>config</code> 文件夹下的 <code>index.js</code> 文件 build 的 <code>assetsPublicPath: &#39;/&#39;</code> 改成  <code>assetsPublicPath: &#39;./&#39;</code></p>
-<p>详情及cli后项目文件结构如图所示</p>
-<p><img src="/fountainpomelo.github.io/2017/07/16/vue-cli项目运行一片空白/cannotopen.png" style="width:100%;"></p>
-<p>以上。</p>
-
+          <p>按照vue-cli构建的vue项目在 `npm start` 后本地 localhost 打开确是一片空白</p>
+          <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/07/16/vue-cli项目运行一片空白/" class="read-more-link">Read more..</a>
+          </div>
         
       
     </div>
@@ -394,7 +461,142 @@
 <li><p>状态管理 vuex</p>
 </li>
 </ul>
-<!-- 在使用element-ui的时候， -->
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2017/06/18/几种常用前端布局方式/">几种常用前端布局方式</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2017-06-18
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>flex弹性布局、rem布局、流式布局等</p>
+          <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/06/18/几种常用前端布局方式/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2016/12/11/藏品/">藏品</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-12-11
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>收藏了一些插件和软件</p>
+          <div class="read-more">
+            <a href="/fountainpomelo.github.io/2016/12/11/藏品/" class="read-more-link">Read more..</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2015/12/18/markdown简单语法/">markdown简单用法</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2015-12-18
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>md</p>
+          <div class="read-more">
+            <a href="/fountainpomelo.github.io/2015/12/18/markdown简单语法/" class="read-more-link">Read more..</a>
+          </div>
         
       
     </div>
@@ -434,11 +636,11 @@
     2018
    <span class="author">Fountain</span>
   <span class="power-by">
-    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
-  <span class="division">|</span>
+  <span class="division">	&amp;</span>
   <span class="theme-info">
-    主题 - 
+  
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
   </span>
