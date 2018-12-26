@@ -406,27 +406,27 @@ a {
 
 h1 {
   font-size: 26px;
-  font-family: STHeiti, Microsoft Yahei, serif; }
+  font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
 
 h2 {
   font-size: 24px;
-  font-family: STHeiti, Microsoft Yahei, serif; }
+  font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
 
 h3 {
   font-size: 20px;
-  font-family: STHeiti, Microsoft Yahei, serif; }
+  font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
 
 h4 {
   font-size: 16px;
-  font-family: STHeiti, Microsoft Yahei, serif; }
+  font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
 
 h5 {
   font-size: 14px;
-  font-family: STHeiti, Microsoft Yahei, serif; }
+  font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
 
 h6 {
   font-size: 14px;
-  font-family: STHeiti, Microsoft Yahei, serif; }
+  font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
 
 .container {
   margin: 0 auto;
@@ -476,7 +476,7 @@ h6 {
       position: relative;
       padding-left: 0;
       padding-right: 25px;
-      font-family: STHeiti, Microsoft Yahei, serif; }
+      font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
       .header .site-navbar .menu .menu-item {
         display: inline-block;
         display: inline-block;
@@ -525,9 +525,9 @@ h6 {
     margin-bottom: 20px; }
     .post .post-header .post-title {
       margin: 0;
-      font-size: 27px;
+      font-size: 22px;
       font-weight: 400;
-      font-family: STHeiti, Microsoft Yahei, serif; }
+      font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
     .post .post-header .post-link {
       display: inline-block;
       vertical-align: middle;
@@ -579,7 +579,7 @@ h6 {
     width: 200px;
     margin-left: 785px;
     padding: 10px;
-    font-family: STHeiti, Microsoft Yahei, serif;
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif;
     border-radius: 5px;
     background: rgba(245, 245, 245, 0.6);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
@@ -607,22 +607,22 @@ h6 {
       display: none; } }
   .post .post-content h1 {
     font-weight: 400;
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
   .post .post-content h2 {
     font-weight: 400;
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
   .post .post-content h3 {
     font-weight: 400;
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
   .post .post-content h4 {
     font-weight: 400;
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
   .post .post-content h5 {
     font-weight: 400;
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
   .post .post-content h6 {
     font-weight: 400;
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
   .post .post-content .headerlink:hover {
     border-bottom: 0; }
   .post .post-content a {
@@ -893,7 +893,7 @@ h6 {
   .post .post-content .read-more .read-more-link {
     color: #bb1a29;
     font-size: 1.1em;
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
     .post .post-content .read-more .read-more-link:hover {
       border-bottom: 1px solid #bb1a29; }
   .post .post-copyright {
@@ -938,7 +938,7 @@ h6 {
   .post .post-footer {
     margin-top: 20px;
     border-top: 1px solid #e6e6e6;
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
     .post .post-footer .post-tags {
       padding: 15px 0; }
       .post .post-footer .post-tags a {
@@ -958,7 +958,7 @@ h6 {
       .post .post-footer .post-nav .next {
         font-weight: 200;
         font-size: 18px;
-        font-family: STHeiti, Microsoft Yahei, serif;
+        font-family: sans-serif, STHeiti, Microsoft Yahei, serif;
         transition-property: transform;
         transition-timing-function: ease-out;
         transition-duration: 0.3s; }
@@ -991,7 +991,7 @@ h6 {
   .pagination .next {
     font-weight: 200;
     font-size: 20px;
-    font-family: STHeiti, Microsoft Yahei, serif;
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif;
     transition-property: transform;
     transition-timing-function: ease-out;
     transition-duration: 0.3s; }
@@ -1018,12 +1018,13 @@ h6 {
         color: #bb1a29; }
   .footer .copyright {
     margin: 10px 0;
-    color: #8a8a8a;
     text-align: center;
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif;
+    font-size: 12px;
+    color: #c5bfbf; }
     .footer .copyright .hexo-link,
     .footer .copyright .theme-link {
-      color: #bb1a29; }
+      color: #f1cbce; }
     .footer .copyright .copyright-year {
       display: block; }
       .footer .copyright .copyright-year .heart {
@@ -1033,7 +1034,7 @@ h6 {
   margin: 2em 0px;
   max-width: 550px; }
   .archive .archive-title {
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
     .archive .archive-title.tag, .archive .archive-title.category {
       margin: 15px 0; }
     .archive .archive-title .archive-name {
@@ -1046,7 +1047,7 @@ h6 {
       display: none;
       color: #8a8a8a; }
   .archive .collection-title {
-    font-family: STHeiti, Microsoft Yahei, serif; }
+    font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
     .archive .collection-title .archive-year {
       margin: 15px 0;
       font-weight: 400;
@@ -1089,7 +1090,7 @@ h6 {
 .tag-cloud {
   margin: 2em 0 3em;
   text-align: center;
-  font-family: STHeiti, Microsoft Yahei, serif; }
+  font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
   .tag-cloud .tag-cloud-title {
     display: inline-block;
     font-size: 18px;
@@ -1112,7 +1113,7 @@ h6 {
 .categories {
   margin: 2em 0 3em;
   text-align: center;
-  font-family: STHeiti, Microsoft Yahei, serif; }
+  font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
   .categories .categories-title {
     display: inline-block;
     font-size: 18px;
@@ -1373,7 +1374,7 @@ h6 {
       border-bottom: 1px solid #f5f5f5; }
     .mobile-menu .mobile-menu-list a {
       font-size: 18px;
-      font-family: STHeiti, Microsoft Yahei, serif; }
+      font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
       .mobile-menu .mobile-menu-list a:hover {
         color: #bb1a29; }
 
