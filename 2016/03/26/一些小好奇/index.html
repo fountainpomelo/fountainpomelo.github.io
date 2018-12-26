@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0"> 
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="刚开始学css对网页的好奇">
+
+
+
+
+  <meta name="keywords" content="前端开发，阴阳师，云之遏，阿嘤嘤嘤酱">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://fountainyys.cn/2016/03/26/一些小好奇/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 一些小好奇 - 荒地 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/fountainpomelo.github.io/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Archives
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/tags/">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          一些小好奇
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2016-03-26
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#禁用选中和复制"><span class="toc-text">禁用选中和复制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BFC"><span class="toc-text">BFC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ajax"><span class="toc-text">ajax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pjax"><span class="toc-text">pjax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#location"><span class="toc-text">location</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h1 id="禁用选中和复制"><a href="#禁用选中和复制" class="headerlink" title="禁用选中和复制"></a>禁用选中和复制</h1><p>要想通过CSS禁用页面内容选中和复制操作，只需在<code>body</code>的样式中，增加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-moz-user-select: none;</span><br><span class="line">-webkit-user-select: none;</span><br><span class="line">-ms-user-select: none;</span><br><span class="line">-khtml-user-select: none;</span><br><span class="line">user-select: none;</span><br></pre></td></tr></table></figure></p>
+<p>IE需要使用JS的<code>onSelected</code>事件了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dom.style.MozUserSelect = &apos;none&apos;;   //fixrox禁止选择的JS脚本</span><br><span class="line">dom.style.webkitUserSelect = &apos;none&apos;;</span><br><span class="line">if( document.all )&#123;                 //IE下禁止选择</span><br><span class="line">    dom.onselectstart=function()&#123;return false;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>禁止文本域<code>textarea</code>可拖拽的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">textarea&#123; resize:none;&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h1><p>一、常见定位方案</p>
+<p>在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:</p>
+<ul>
+<li><strong>普通流</strong> (normal flow)<br>在普通流中，元素按照其在 HTML 中的先后位置至上而下布局，在这个过程中，行内元素水平排列，直到当行被占满然后换行，块级元素则会被渲染为完整的一个新行，除非另外指定，否则所有元素默认都是普通流定位，也可以说，普通流中元素的位置由该元素在 HTML 文档中的位置决定。</li>
+<li><strong>浮动</strong> (float)<br>在浮动布局中，元素首先按照普通流的位置出现，然后根据浮动的方向尽可能的向左边或右边偏移，其效果与印刷排版中的文本环绕相似。</li>
+<li><strong>绝对定位</strong> (absolute positioning)<br>在绝对定位布局中，元素会整体脱离普通流，因此绝对定位元素不会对其兄弟元素造成影响，而元素具体的位置由绝对定位的坐标决定。</li>
+</ul>
+<p>二、BFC 概念</p>
+<p>Formatting context(格式化上下文) 是 W3C CSS2.1 规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系和相互作用。</p>
+<p>BFC 即 Block Formatting Contexts (块级格式化上下文)，它属于上述定位方案的普通流。</p>
+<p>具有 BFC 特性的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 具有普通容器所没有的一些特性。<br>s<br>通俗一点来讲，可以把 BFC 理解为一个封闭的大箱子，箱子内部的元素无论如何翻江倒海，都不会影响到外部。</p>
+<p>三、触发 BFC</p>
+<p>只要元素满足下面任一条件即可触发 BFC 特性：</p>
+<ul>
+<li>body 根元素</li>
+<li>浮动元素：<code>float</code> 除 <code>none</code> 以外的值</li>
+<li>绝对定位元素：<code>position (absolute、fixed)</code></li>
+<li><code>display</code> 为 <code>inline-block</code>、<code>table-cells</code>、<code>flex</code></li>
+<li><code>overflow</code> 除了 <code>visible</code> 以外的值 (<code>hidden、auto、scroll</code>)</li>
+</ul>
+<p>四、BFC 特性及应用</p>
+<ol>
+<li>同一个 BFC 下外边距会发生折叠<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>从效果上看，因为两个 div 元素都处于同一个 BFC 容器下 (这里指 body 元素) 所以第一个 div 的下边距和第二个 div 的上边距发生了重叠，所以两个盒子之间距离只有 100px，而不是 200px。<br>首先这不是 CSS 的 bug，我们可以理解为一种规范，如果想要避免外边距的重叠，可以将其放在不同的 BFC 容器中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;container&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这时候，两个盒子边距就变成了 200px </p>
+<ol start="2">
+<li>BFC 可以包含浮动的元素（清除浮动）<br>我们都知道，浮动的元素会脱离普通文档流，来看下下面一个例子<br><div style="border: 1px solid #000;"><div style="width: 100px;height: 100px;background: #eee;float: left;"></div></div><br> <br><br> <br></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;border: 1px solid #000;&quot;&gt;</span><br><span class="line">    &lt;div style=&quot;width: 100px;height: 100px;background: #eee;float: left;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>由于容器内元素浮动，脱离了文档流，所以容器只剩下 2px 的边距高度。如果使触发容器的 BFC，那么容器将会包裹着浮动元素。</p>
+<div style="border: 1px solid #000;overflow: hidden"><div style="width: 100px;height: 100px;background: #eee;float: left;">width: 100px;height: 100px;background: #eee;float: left;</div>border: 1px solid #000;overflow: hidden</div>
+
+
+<ol start="3">
+<li>BFC 可以阻止元素被浮动元素覆盖<br>先来看一个文字环绕效果：<br><br><div style="height: 100px;width: 100px;float: left;background: lightblue">我是一个左浮动的元素</div><div style="width: 200px; height: 200px;background: #eee">我是一个没有设置浮动,<br>也没有触发 BFC 元素, width: 200px; height:200px; background: #eee;</div>
+
+
+</li>
+</ol>
+<p>这时候其实第二个元素有部分被浮动元素所覆盖，(但是文本信息不会被浮动元素所覆盖) 如果想避免元素被覆盖，可触第二个元素的 BFC 特性，在第二个元素中加入 overflow: hidden，就会变成：</p>
+<p>这个方法可以用来实现两列自适应布局，效果不错，这时候左边的宽度固定，右边的内容自适应宽度(去掉上面右边内容的宽度)。</p>
+<h1 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h1><ul>
+<li>优点：</li>
+</ul>
+<ol>
+<li>最大的一点是页面无刷新，用户的体验非常好。</li>
+<li>使用异步方式与服务器通信，具有更加迅速的响应能力。。</li>
+<li>可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本。并且减轻服务器的负担，ajax的原则是“按需取数据”，可以最大程度的减少冗余请求，和响应对服务器造成的负担。</li>
+<li>基于标准化的并被广泛支持的技术，不需要下载插件或者小程序。</li>
+<li>ajax可使因特网应用程序更小、更快，更友好。</li>
+</ol>
+<ul>
+<li>缺点：</li>
+</ul>
+<ol>
+<li><p>ajax干掉了Back和History功能，即对浏览器机制的破坏。</p>
+<p>在动态更新页面的情况下，用户无法回到前一个页面状态，因为浏览器仅能记忆历史记录中的静态页面。一个被完整读入的页面与一个已经被动态修改过的页面之间的差别非常微妙；用户通常会希望单击后退按钮能够取消他们的前一次操作，但是在Ajax应用程序中，这将无法实现。</p>
+<p> 后退按钮是一个标准的web站点的重要功能，但是它没法和js进行很好的合作。这是Ajax所带来的一个比较严重的问题，因为用户往往是希望能够通过后退来取消前一次操作的。</p>
+<p> 那么对于这个问题有没有办法？答案是肯定的，用过Gmail的知道，Gmail下面采用的Ajax技术解决了这个问题，在Gmail下面是可以后退的，但是，它也并不能改变Ajax的机制，它只是采用的一个比较笨但是有效的办法，即用户单击后退按钮访问历史记录时，通过创建或使用一个隐藏的IFRAME来重现页面上的变更。（例如，当用户在Google Maps中单击后退时，它在一个隐藏的IFRAME中进行搜索，然后将搜索结果反映到Ajax元素上，以便将应用程序状态恢复到当时的状态。）</p>
+<p> 但是，虽然说这个问题是可以解决的，但是它所带来的开发成本是非常高的，并与Ajax框架所要求的快速开发是相背离的。这是Ajax所带来的一个非常严重的问题。</p>
+<p> 一个相关的观点认为，使用动态页面更新使得用户难于将某个特定的状态保存到收藏夹中。该问题的解决方案也已出现，大部分都使用URL片断标识符（通常被称为锚点，即URL中#后面的部分）来保持跟踪，允许用户回到指定的某个应用程序状态。（许多浏览器允许JavaScript动态更新锚点，这使得Ajax应用程序能够在更新显示内容的同时更新锚点。）这些解决方案也同时解决了许多关于不支持后退按钮的争论。</p>
+</li>
+<li><p>安全问题 AJAX暴露了与服务器交互的细节。</p>
+<p>AJAX技术给用户带来很好的用户体验的同时也对IT企业带来了新的安全威胁，Ajax技术就如同对企业数据建立了一个直接通道。这使得开发者在不经意间会暴露比以前更多的数据和服务器逻辑。</p>
+<p>Ajax的逻辑可以对客户端的安全扫描技术隐藏起来，允许黑客从远端服务器上建立新的攻击。还有Ajax也难以避免一些已知的安全弱点，诸如跨站点脚步攻击、SQL注入攻击和基于Credentials的安全漏洞等</p>
+</li>
+<li><p>对搜索引擎的支持比较弱。</p>
+</li>
+<li>破坏了程序的异常机制。</li>
+<li>不容易调试。</li>
+</ol>
+<ul>
+<li>解决：pjax</li>
+</ul>
+<h1 id="pjax"><a href="#pjax" class="headerlink" title="pjax"></a>pjax</h1><p>pushState + ajax = pjax 站内页面刷新</p>
+<p>PJAX的基本思路是，用户点击一个链接，通过ajax更新页面变化的部分，然后使用HTML5的pushState修改浏览器的URL地址，这样有效地避免了整个页面的重新加载。如果浏览器不支持history的两个新API或者JS被禁用了，那这个链接就只能跳转并重新刷新整个页面了。和传统的ajax设计稍微不同，ajax通常是从后台获取JSON数据，然后由前端解析渲染，而PJAX请求的是一个在服务器上生成好的HTML碎片。<br>当加载了pjax脚本之后， 它会拦截这些链接的事件， 然后包装成一个ajax请求， 发送给服务器。</p>
+<p>缺点：</p>
+<p>服务器端需要根据过来的请求， 判断是作全页面渲染还是部分页面渲染， 相对来说系统复杂度增大了。</p>
+<h1 id="location"><a href="#location" class="headerlink" title="location"></a>location</h1><p>设置或获取对象指定的文件名或路径。<br><code>window.location.pathname</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.pathname);</code> 则输出：<code>/topic/index</code></p>
+<p>设置或获取整个 URL 为字符串。<br><code>window.location.href</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.href);</code> 则输出：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code></p>
+<p>设置或获取与 URL 关联的端口号码。<br><code>window.location.port</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.port);</code> 则输出：<code>8086</code></p>
+<p>设置或获取 URL 的协议部分。<br><code>window.location.protocol</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.protocol);</code> 则输出：<code>http:</code></p>
+<p>设置或获取 href 属性中在井号“#”后面的分段。<br><code>window.location.hash</code></p>
+<p>设置或获取 location 或 URL 的 hostname 和 port 号码。<br><code>window.location.host</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.host);</code> 则输出：<code>fountainyys.cn</code></p>
+<p>设置或获取 href 属性中跟在问号后面的部分。<br><code>window.location.search</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.search);</code> 则输出：<code>?topicId=361</code></p>
+<p>window.location<br>属性                  描述<br>hash                设置或获取 href 属性中在井号“#”后面的分段。<br>host                 设置或获取 location 或 URL 的 hostname 和 port 号码。<br>hostname      设置或获取 location 或 URL 的主机名称部分。<br>href                  设置或获取整个 URL 为字符串。<br>pathname      设置或获取对象指定的文件名或路径。<br>port                  设置或获取与 URL 关联的端口号码。<br>protocol          设置或获取 URL 的协议部分。<br>search            设置或获取 href 属性中跟在问号后面的部分。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>Author: </span>
+      <a href="http://fountainyys.cn">Fountain</a>
+    </p>
+    <p class="copyright-item">
+      <span>Link: </span>
+      <a href="http://fountainyys.cn/2016/03/26/一些小好奇/">http://fountainyys.cn/2016/03/26/一些小好奇/</a>
+    </p>
+
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/fountainpomelo.github.io/2016/12/11/藏品/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">藏品</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/fountainpomelo.github.io/2015/12/18/markdown简单语法/">
+        <span class="next-text nav-default">markdown简单用法</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+<div class="copyright">
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2018
+   <span class="author">Fountain</span>
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">	&amp;</span>
+  <span class="theme-info">
+  
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

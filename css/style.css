@@ -1,4 +1,7 @@
 @charset "UTF-8";
+body {
+  font-weight: 200 !important; }
+
 @font-face {
   font-family: 'Chancery';
   src: url("../fonts/chancery/apple-chancery-webfont.eot");
@@ -953,7 +956,7 @@ h6 {
         clear: both; }
       .post .post-footer .post-nav .prev,
       .post .post-footer .post-nav .next {
-        font-weight: 600;
+        font-weight: 200;
         font-size: 18px;
         font-family: STHeiti, Microsoft Yahei, serif;
         transition-property: transform;
@@ -986,7 +989,7 @@ h6 {
     clear: both; }
   .pagination .prev,
   .pagination .next {
-    font-weight: 600;
+    font-weight: 200;
     font-size: 20px;
     font-family: STHeiti, Microsoft Yahei, serif;
     transition-property: transform;
