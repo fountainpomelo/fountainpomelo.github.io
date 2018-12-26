@@ -224,7 +224,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#禁用选中和复制"><span class="toc-text">禁用选中和复制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BFC"><span class="toc-text">BFC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ajax"><span class="toc-text">ajax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pjax"><span class="toc-text">pjax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#location"><span class="toc-text">location</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#禁用选中和复制"><span class="toc-text">禁用选中和复制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BFC"><span class="toc-text">BFC</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ajax"><span class="toc-text">ajax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pjax"><span class="toc-text">pjax</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#location"><span class="toc-text">location</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ins理发店式彩色进度条"><span class="toc-text">ins理发店式彩色进度条</span></a></li></ol>
     </div>
   </div>
 
@@ -316,15 +316,16 @@
 <p>PJAX的基本思路是，用户点击一个链接，通过ajax更新页面变化的部分，然后使用HTML5的pushState修改浏览器的URL地址，这样有效地避免了整个页面的重新加载。如果浏览器不支持history的两个新API或者JS被禁用了，那这个链接就只能跳转并重新刷新整个页面了。和传统的ajax设计稍微不同，ajax通常是从后台获取JSON数据，然后由前端解析渲染，而PJAX请求的是一个在服务器上生成好的HTML碎片。<br>当加载了pjax脚本之后， 它会拦截这些链接的事件， 然后包装成一个ajax请求， 发送给服务器。</p>
 <p>缺点：</p>
 <p>服务器端需要根据过来的请求， 判断是作全页面渲染还是部分页面渲染， 相对来说系统复杂度增大了。</p>
-<h1 id="location"><a href="#location" class="headerlink" title="location"></a>location</h1><p>设置或获取对象指定的文件名或路径。<br><code>window.location.pathname</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.pathname);</code> 则输出：<code>/topic/index</code></p>
-<p>设置或获取整个 URL 为字符串。<br><code>window.location.href</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.href);</code> 则输出：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code></p>
-<p>设置或获取与 URL 关联的端口号码。<br><code>window.location.port</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.port);</code> 则输出：<code>8086</code></p>
-<p>设置或获取 URL 的协议部分。<br><code>window.location.protocol</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.protocol);</code> 则输出：<code>http:</code></p>
-<p>设置或获取 href 属性中在井号“#”后面的分段。<br><code>window.location.hash</code></p>
-<p>设置或获取 location 或 URL 的 hostname 和 port 号码。<br><code>window.location.host</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.host);</code> 则输出：<code>fountainyys.cn</code></p>
-<p>设置或获取 href 属性中跟在问号后面的部分。<br><code>window.location.search</code><br>例：<code>http://fountainyys.cn/2016/03/26/一些小好奇/?topicId=361</code><br><code>console.log(window.location.search);</code> 则输出：<code>?topicId=361</code></p>
+<h1 id="location"><a href="#location" class="headerlink" title="location"></a>location</h1><p>例：<code>http://localhost:8086/topic/index/?topicId=361#location</code></p>
+<p>设置或获取对象指定的文件名或路径。<br><code>window.location.pathname</code><br>输出：<code>/topic/index</code></p>
+<p>设置或获取整个 URL 为字符串。<br><code>window.location.href</code><br>输出：<code>http://localhost:8086/topic/index/?topicId=361</code></p>
+<p>设置或获取与 URL 关联的端口号码。<br><code>window.location.port</code><br>输出：<code>8086</code></p>
+<p>设置或获取 URL 的协议部分。<br><code>window.location.protocol</code><br>输出：<code>http:</code></p>
+<p>设置或获取 href 属性中在井号“#”后面的分段。<br><code>window.location.hash</code><br>输出：<code>&#39;#location&#39;</code></p>
+<p>设置或获取 location 或 URL 的 hostname 和 port 号码。<br><code>window.location.host</code><br>输出：<code>fountainyys.cn</code></p>
+<p>设置或获取 href 属性中跟在问号后面的部分。<br><code>window.location.search</code><br>输出：<code>?topicId=361</code></p>
 <p>window.location<br>属性                  描述<br>hash                设置或获取 href 属性中在井号“#”后面的分段。<br>host                 设置或获取 location 或 URL 的 hostname 和 port 号码。<br>hostname      设置或获取 location 或 URL 的主机名称部分。<br>href                  设置或获取整个 URL 为字符串。<br>pathname      设置或获取对象指定的文件名或路径。<br>port                  设置或获取与 URL 关联的端口号码。<br>protocol          设置或获取 URL 的协议部分。<br>search            设置或获取 href 属性中跟在问号后面的部分。</p>
-
+<h1 id="ins理发店式彩色进度条"><a href="#ins理发店式彩色进度条" class="headerlink" title="ins理发店式彩色进度条"></a>ins理发店式彩色进度条</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">height: 3px;</span><br><span class="line">background: #27c4f5 linear-gradient(to right,#27c4f5,#a307ba,#fd8d32,#70c050,#27c4f5);</span><br><span class="line">background-size: 500%;</span><br><span class="line">animation: 2s linear infinite LoadingBarProgress,.5s ease-outLoadingBarEnter;</span><br><span class="line">transform-origin: left;</span><br><span class="line">width: 100%;</span><br></pre></td></tr></table></figure>
       
     </div>
 
