@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0"> 
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="对首屏加载缓慢采取的一些措施">
+
+
+
+
+  <meta name="keywords" content="前端开发，阴阳师，云之遏，阿嘤嘤嘤酱">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://fountainyys.cn/2018/09/28/Vue单页面首屏加载慢/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> Vue单页面首屏加载慢 - 荒地 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/fountainpomelo.github.io/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/tags/">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Vue单页面首屏加载慢
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          9月 28
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器开启Gzip"><span class="toc-text">服务器开启Gzip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#框架和插件从cdn中引入"><span class="toc-text">框架和插件从cdn中引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Element-ui按需加载"><span class="toc-text">Element-ui按需加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按需异步加载"><span class="toc-text">按需异步加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue打包后出现一些map文件"><span class="toc-text">Vue打包后出现一些map文件</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>未使用vue的时候听说过vue首屏加载会遇到白屏的情况，打包构建应用时，Javascript 包会变得非常大，影响页面加载，进入首页时，需要加载的内容过多，会导致白屏很长一段时间，当时我毫不在意。</p>
+<p>但最近我也发现我的项目在测试服打开的时候白屏很长一段时间，首页加载真是个灾难！远远超出了我的秒开预期，测试也乐着告诉我：你看打开一片白的，加载太慢了吧。我理不直气也壮，告诉他：我知道啦！！</p>
+<p>有问题就要面对呀，作为一位桀骜不驯的90后。我知道必须要实现常提的问题： 压缩和按需加载<br>然后立马查文档，“东拼西凑”。</p>
+<h2 id="服务器开启Gzip"><a href="#服务器开启Gzip" class="headerlink" title="服务器开启Gzip"></a>服务器开启Gzip</h2><p>开启gzip达到的效果是最显而易见的<a href="https://zhuanlan.zhihu.com/p/24764131" target="_blank" rel="noopener">参考</a></p>
+<p>使用 <code>vue-cli</code> 生成的项目，已默认配好相关的设置。发现 <code>config/index.js</code> 下的 <code>productionGzip: false</code>，改成 <code>true</code> 开启。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Gzip off by default as many popular static hosts such as</span><br><span class="line">// Surge or Netlify already gzip all static assets for you.</span><br><span class="line">// Before setting to `true`, make sure to:</span><br><span class="line">// npm install --save-dev compression-webpack-plugin</span><br><span class="line"></span><br><span class="line">productionGzip: true,</span><br><span class="line">productionGzipExtensions: [&apos;js&apos;, &apos;css&apos;],</span><br></pre></td></tr></table></figure>
+<p>脚手架提醒我们安装<code>compression-webpack-plugin</code>；</p>
+<p>在 <code>webpack.prod.conf.js</code> 可以发现有一串代码，如下： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">if (config.build.productionGzip) &#123;</span><br><span class="line">  const CompressionWebpackPlugin = require(&apos;compression-webpack-plugin&apos;)</span><br><span class="line"></span><br><span class="line">  webpackConfig.plugins.push(</span><br><span class="line">    new CompressionWebpackPlugin(&#123;</span><br><span class="line">      asset: &apos;[path].gz[query]&apos;,</span><br><span class="line">      algorithm: &apos;gzip&apos;,</span><br><span class="line">      test: new RegExp(</span><br><span class="line">        &apos;\\.(&apos; +</span><br><span class="line">        config.build.productionGzipExtensions.join(&apos;|&apos;) +</span><br><span class="line">        &apos;)$&apos;</span><br><span class="line">      ),</span><br><span class="line">      threshold: 10240,</span><br><span class="line">      minRatio: 0.8</span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>按照正常的前后台配置手段，此时应该是成功了！</p>
+<p>但是怎么才算成功了：</p>
+<p><code>Request Headers</code>里面的 <code>Accept-Encoding: gzip</code> 只是表示前端（用户浏览器）支持<code>gzip</code>的压缩方式。<br>还需要服务器<code>gzip</code>支持，判断浏览器是否支持gzip，如果支持gzip，则向浏览器传送压缩过的内容，不支持则向浏览器发送未经压缩的内容，具体可以看 <code>Response Headers中的Content-Encoding</code>字段是否为<code>gzip</code>。</p>
+<p><code>vue-cli</code>开启压缩之后的踩坑之路开始了</p>
+<ul>
+<li>打包报错了！混蛋！</li>
+<li>报错：<code>throw new ValidationError(ajv.errors, name);ValidationError: Compression Plugin Invalid Options options should NOT have additional properties</code></li>
+</ul>
+<p>按照这个错误，我成功地找到了一个解决方案：版本问题。<br>将<code>&quot;compression-webpack-plugin&quot;: &quot;^2.0.0&quot;</code> 替换为 <code>&quot;compression-webpack-plugin&quot;: &quot;^1.1.11&quot;</code>解决了。</p>
+<h2 id="框架和插件从cdn中引入"><a href="#框架和插件从cdn中引入" class="headerlink" title="框架和插件从cdn中引入"></a>框架和插件从cdn中引入</h2><p><code>app.js</code>、<code>vendor.js</code> 文件较大，考虑将常用不怎么变更的文件外链使用，使用 <code>cdn</code>，然后在 <code>webpack</code> 配置中指定 <code>externals</code>。</p>
+<p>1.找到 <code>build/webpack.base.conf.js</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">externals: &#123;</span><br><span class="line">  &apos;vue&apos;: &apos;Vue&apos;,</span><br><span class="line">  &apos;vue-router&apos;: &apos;VueRouter&apos;,</span><br><span class="line">  &apos;vuex&apos;: &apos;Vuex&apos;,</span><br><span class="line">  &apos;axios&apos;: &apos;axios&apos;,</span><br><span class="line">  &apos;moment&apos;: &apos;moment&apos;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>2.加入<code>&lt;script&gt;</code><br>我选择在 <a href="https://www.bootcdn.cn" target="_blank" rel="noopener">bootcdn</a> 选取指定框架插件的压缩版。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/vue/xxxx/vue.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/vue-router/xxxx/vue-router.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/vuex/xxxx/vuex.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/axios/xxxx/axios.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/element-ui/xxxx/locale/el.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.bootcss.com/moment.js/xxxx/moment.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>看苍天饶过谁，这时候打包可以发现 <code>vendor.js</code> 确实变小了，速度有一定的提升，但如果您用错了构建各个版本 js，可能会报<code>module is not defined</code> <code>process is not defined</code>之类的错误，栗子查看 vue <a href="https://cn.vuejs.org/v2/guide/installation.html#%E5%AF%B9%E4%B8%8D%E5%90%8C%E6%9E%84%E5%BB%BA%E7%89%88%E6%9C%AC%E7%9A%84%E8%A7%A3%E9%87%8A" target="_blank" rel="noopener">对不同构建版本的解释</a></p>
+<h2 id="Element-ui按需加载"><a href="#Element-ui按需加载" class="headerlink" title="Element-ui按需加载"></a>Element-ui按需加载</h2><p>我项目使用的是 Element-ui ，当初选择它，是因为它真的好用，从也伴随 Element 从 Element 1.x 到 Element 2.x，解决加载缓慢问题可以先从 Element-ui 提供的按需加载组件开始，<a href="http://element.eleme.io/#/zh-CN/component/quickstart" target="_blank" rel="noopener">接文档</a> 。<br>如果您使用了其他UI框架，也可以按照文档指示按需加载，不在一开始就引用全部的组件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//完整引入</span><br><span class="line">import Vue from &apos;vue&apos;;</span><br><span class="line">import ElementUI from &apos;element-ui&apos;;</span><br><span class="line">import &apos;element-ui/lib/theme-chalk/index.css&apos;;</span><br><span class="line">import App from &apos;./App.vue&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//按需引入eg.</span><br><span class="line"></span><br><span class="line">1. npm install babel-plugin-component -D</span><br><span class="line"></span><br><span class="line">2. 更改.babelrc 配置文件</span><br><span class="line"></span><br><span class="line">&#123;		  </span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">      [&quot;env&quot;, &#123; &quot;modules&quot;: false &#125;]],		  </span><br><span class="line">      &quot;plugins&quot;: [		    </span><br><span class="line">            [	&quot;component&quot;,		      </span><br><span class="line">              &#123;		</span><br><span class="line">                &quot;libraryName&quot;: &quot;element-ui&quot;,			</span><br><span class="line">                &quot;styleLibraryName&quot;: &quot;theme-chalk&quot;		      </span><br><span class="line">                &#125;</span><br><span class="line">            ]		  </span><br><span class="line">      ]		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">3. 在main.js中引入项目中需要用到的插件</span><br><span class="line"></span><br><span class="line">import &#123; Button, Select &#125; from &apos;element-ui&apos;;</span><br><span class="line">Vue.use(Button)</span><br><span class="line">Vue.use(Select)</span><br></pre></td></tr></table></figure>
+<p>把不同路由对应的组件分割成不同的代码块，用vue-cli构建的应用，Webpack 在给项目打包的时候，它的默认配置会讲项目所有的函数打包成一个 <code>app.js</code> 文件。</p>
+<p><a href="https://router.vuejs.org/zh/guide/advanced/lazy-loading.html" target="_blank" rel="noopener">vue-router官方说明</a>提到：</p>
+<blockquote>
+<p>结合 <code>Vue</code> 的异步组件和 <code>Webpack</code> 的代码分割功能，轻松实现路由组件的懒加载。</p>
+</blockquote>
+<p>更详细的内容参见文档</p>
+<p>在首页的时候加载，分割成不同的代码块，js 也进行分割，在组件被加载时加载对应的文件，将更加高效。</p>
+<h2 id="按需异步加载"><a href="#按需异步加载" class="headerlink" title="按需异步加载"></a>按需异步加载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">称下面这种为 懒加载 写法：</span><br><span class="line">const Login = resolve =&gt; require([&apos;@/components/login&apos;],resolve)</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/login&apos;,</span><br><span class="line">      path: &apos;/login&apos;,</span><br><span class="line">      component: Login</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">称我平时所使用的为 非懒加载 写法：</span><br><span class="line">import Login from &apos;@/components/login&apos;</span><br><span class="line">    &#123;</span><br><span class="line">      path: &apos;/login&apos;,</span><br><span class="line">      path: &apos;/login&apos;,</span><br><span class="line">      component: Login</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+<p>上个示例的写法原来这是代码分块的语法，即 webpack 提供的 AMD 风格的 <code>require.ensure()</code> 按组分块写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const Foo = () =&gt; import(/* webpackChunkName: &quot;group-foo&quot; */ &apos;@/components/login&apos;)</span><br><span class="line">const Foo = resolve =&gt; &#123;</span><br><span class="line">    //为了显示加载动画 可以在此处加入loading状态</span><br><span class="line">  require.ensure([&apos;@/components/login&apos;], () =&gt; &#123;</span><br><span class="line">    resolve(require(&apos;@/components/login&apos;))</span><br><span class="line">    //在此处关闭loading状态</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是一种使用 CommonJS 的形式来异步加载模块的策略。</p>
+<p>emmmmmmm官方文档提到的另一种 <code>import</code> 形式的写法： <code>const Login = () =&gt; import(&#39;./Login.vue&#39;)</code></p>
+<p> <code>import()</code> 按需引入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const Login =  () =&gt; import(/* webpackChunkName: &quot;group-foo&quot; */ &apos;@/components/login&apos;)</span><br><span class="line">const Home =  () =&gt; import(/* webpackChunkName: &quot;group-home&quot; */ &apos;@/components/home&apos;)</span><br><span class="line">const Tab =  () =&gt; import(/* webpackChunkName: &quot;group-home&quot; */ &apos;@/components/tab/tab&apos;)</span><br><span class="line"></span><br><span class="line">//特殊的注释语法来提供 chunk name (需要 Webpack &gt; 2.4)</span><br></pre></td></tr></table></figure></p>
+<p>经过打包测试，打包时间缩短了，Webpack 将按 webpackChunkName 把对应的 js 分组拆分，多了几个如 <code>1.xxxxx.js</code> <code>2.xxxxx.js</code> 这样子的文件，如果没有指定webpackChunkName，每个组件打包成一个js文件。</p>
+<p>原本几 M 大的 js 文件就这样被开心地分割了，但是不好意思，没有截图。</p>
+<h2 id="Vue打包后出现一些map文件"><a href="#Vue打包后出现一些map文件" class="headerlink" title="Vue打包后出现一些map文件"></a>Vue打包后出现一些map文件</h2><p>仔细看打包过后的文件，默认会生成一些 map 文件，这些文件一般体积都很大。</p>
+<p>原因在于项目打包后，代码都是经过压缩加密的，如果运行时报错，输出的错误信息无法准确得知是哪里的代码报错。<br>有了.map文件就可以像未加密的代码一样，准确的输出是哪一行哪一列有错。</p>
+<p>所以为了快速打包，我们可以找到 <code>config/index.js</code>，找到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Source Maps</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">productionSourceMap: true,</span><br></pre></td></tr></table></figure>
+<p>把 <code>productionSourceMap</code> 改成 <code>false</code>，这之后打包速度快一些，整个项目文件也小很多。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://fountainyys.cn">Fountain</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://fountainyys.cn/2018/09/28/Vue单页面首屏加载慢/">http://fountainyys.cn/2018/09/28/Vue单页面首屏加载慢/</a>
+    </p>
+
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/fountainpomelo.github.io/tags/vue/">vue</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/fountainpomelo.github.io/2018/12/17/公交车碎碎念/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">公交车碎碎念</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/fountainpomelo.github.io/2017/11/24/vuex简单使用/">
+        <span class="next-text nav-default">vuex简单使用</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
+
+      </div>  
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"> 
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:fountain_x@outlook.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://weibo.com/u/2874806624" class="iconfont icon-weibo" title="weibo"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.douban.com/people/114544231/?dt_dapp=1" class="iconfont icon-douban" title="douban"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+
+  </div>
+
+ 
+
+<div class="copyright">
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+   <span class="author">Fountain</span>
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">	&amp;</span>
+  <span class="theme-info">
+  
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>

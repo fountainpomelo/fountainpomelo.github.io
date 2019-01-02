@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="收藏了一些插件和软件">
+  <meta name="description" content="模块化学习总结">
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="http://fountainyys.cn/2016/12/11/藏品/">
+<link rel="canonical" href="http://fountainyys.cn/2017/07/28/Js模块化/">
 
 
 
@@ -90,7 +90,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
 </script>
 
-    <title> 藏品 - 荒地 </title>
+    <title> Js模块化 - 荒地 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -206,13 +206,13 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          藏品
+          Js模块化
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          12月 11
+          7月 28
         </span>
         
         
@@ -224,7 +224,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#UA客户端环境识别"><span class="toc-text">UA客户端环境识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间格式化"><span class="toc-text">时间格式化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Slider"><span class="toc-text">Slider</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日期选择"><span class="toc-text">日期选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css动画"><span class="toc-text">css动画</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CommonJs"><span class="toc-text">CommonJs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AMD"><span class="toc-text">AMD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMD"><span class="toc-text">CMD</span></a></li></ol>
     </div>
   </div>
 
@@ -232,16 +232,29 @@
 
     <div class="post-content">
       
-        <h2 id="UA客户端环境识别"><a href="#UA客户端环境识别" class="headerlink" title="UA客户端环境识别"></a>UA客户端环境识别</h2><ul>
-<li><a href="https://github.com/hotoo/detector" target="_blank" rel="noopener">detector</a></li>
-</ul>
-<h2 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h2><ul>
-<li><a href="https://github.com/moment/moment/" target="_blank" rel="noopener">Moment.js</a></li>
-</ul>
-<h2 id="Slider"><a href="#Slider" class="headerlink" title="Slider"></a>Slider</h2><ul>
-<li><a href="https://github.com/nolimits4web/swiper/" target="_blank" rel="noopener">Swiper</a></li>
-</ul>
-<h2 id="日期选择"><a href="#日期选择" class="headerlink" title="日期选择"></a>日期选择</h2><h2 id="css动画"><a href="#css动画" class="headerlink" title="css动画"></a>css动画</h2>
+        <p>让我们再回忆一下那个打开网站页面广告飘来飘去的时代，但在当时看来，这也许是一件极为正常的事情。</p>
+<p>那个时候并没有前端工程师，页面没有这时候这么美观，需求也没有这么复杂，工程师在页面上随便写写js就能搞定需求。</p>
+<p>如果你用原生js写过项目，你一定会遇到这些问题：</p>
+<ol>
+<li><p>尴尬的全局变量<br>Js出了名的弱语言类型，变量作用域闭包原型链问题也成为面试笔试部分的一道靓丽的风景线。Js只有函数作用域，没有块级作用域，即使是if/for等有{}的结构体，也并不能具备自己的作用域。</p>
+</li>
+<li><p>函数命名冲突<br>唔，本身起名字也是一件稍费神的事情。如果你刚接手了一个项目，小王同学已经写了一半了，此时你进入项目，很巧的你想要实现一个跟小王同学之前写过的一个类似的功能函数，你可能会十分担心自己的函数名字是否会跟小王同学起的函数名字冲突，只能用一种丑陋的方式进行（偷偷在函数名字后面加个1）。</p>
+</li>
+<li><p>依赖关系<br>自上而下的执行方式使得如果<code>b.js</code>依赖<code>a.js</code>，引入<code>a.js</code>的<code>&lt;script&gt;</code>标签就必须写在<code>b.js</code>前面</p>
+</li>
+</ol>
+<p>自执行函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var fn =  (function()&#123; 　　　　</span><br><span class="line">   var _count = 0; 　　　　</span><br><span class="line">   var m1 = function()&#123;</span><br><span class="line"></span><br><span class="line">   &#125;; 　　</span><br><span class="line">   var m2 = function()&#123;</span><br><span class="line"></span><br><span class="line">   &#125;; 　　</span><br><span class="line">   return &#123; 　　　　　　</span><br><span class="line">       m1 : m1, 　　　　　　</span><br><span class="line">       m2 : m2 　　　　</span><br><span class="line">    &#125;; 　</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>jQuery风格的匿名自执行函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">;(function () &#123; </span><br><span class="line">/* 代码片段 */ </span><br><span class="line">)()</span><br></pre></td></tr></table></figure></p>
+<p>如何优雅地不增加全局变量把模块的API暴漏出去捏？</p>
+<h2 id="CommonJs"><a href="#CommonJs" class="headerlink" title="CommonJs"></a>CommonJs</h2><p><code>Node.js</code>的出世将<code>JavaScript</code>带到了服务器端，社区大神发力制定了一系列规范，叫做<code>CommonJs</code>。</p>
+<p><code>CommonJS</code>模块的代码都运行在模块作用域，不会污染全局作用域，模块可以多次加载，用 <code>require</code> 引入模块，<code>exports</code> 向外暴露<code>api</code>。</p>
+<p>它主要是为服务器端<code>JavaScript</code>运行库设计的，模块是同步加载的，这使得难以在浏览器中运行<code>CommonJS</code>代码。</p>
+<p>为了达成浏览器端模块化开发的目的，还有很多的规范随着技术的产生推广而被知道。</p>
+<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p><code>AMD</code>（异步模块定义）是 <code>RequireJS</code> 在推广过程中对模块定义的规范化产出。</p>
+<p>采用异步方式加载模块，模块的加载不影响它后面语句的运行，模块通过 <code>define</code> 函数定义在闭包中，其推崇依赖前置，即一开始就把依赖关系写好：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 定义模块</span><br><span class="line"></span><br><span class="line">define([&apos;./a&apos;, &apos;./b&apos;], function(a, b) &#123; </span><br><span class="line">a.doSomething()</span><br><span class="line">...</span><br><span class="line">b.doSomething()</span><br><span class="line">...</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 调用模块</span><br><span class="line"></span><br><span class="line">require([&apos;moduleA&apos;, &apos;moduleB&apos;, &apos;moduleC&apos;], function (moduleA, moduleB, moduleC)&#123;</span><br><span class="line">　　...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><p><code>CMD</code> 是 <code>SeaJS</code> 在推广过程中对模块定义的规范化产出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define(function(require, exports, module) &#123;   </span><br><span class="line">    var a = require(&apos;./a&apos;)    //依赖可以就近书写</span><br><span class="line">    a.doSomething()   </span><br><span class="line">    </span><br><span class="line">    var b = require(&apos;./b&apos;)   </span><br><span class="line">    b.doSomething()   </span><br><span class="line">    ... </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -256,7 +269,7 @@
     </p>
     <p class="copyright-item">
       <span>原文链接: </span>
-      <a href="http://fountainyys.cn/2016/12/11/藏品/">http://fountainyys.cn/2016/12/11/藏品/</a>
+      <a href="http://fountainyys.cn/2017/07/28/Js模块化/">http://fountainyys.cn/2017/07/28/Js模块化/</a>
     </p>
 
   </div>
@@ -270,25 +283,19 @@
     
       <footer class="post-footer">
         
-          <div class="post-tags">
-            
-              <a href="/fountainpomelo.github.io/tags/藏品/">藏品</a>
-            
-          </div>
-        
         
         
   <nav class="post-nav">
     
-      <a class="prev" href="/fountainpomelo.github.io/2017/02/27/几种循环/">
+      <a class="prev" href="/fountainpomelo.github.io/2017/08/20/vue全家桶/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">几种循环</span>
+        <span class="prev-text nav-default">我以为的vue全家桶项目</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
     
-      <a class="next" href="/fountainpomelo.github.io/2016/03/26/一些小好奇/">
-        <span class="next-text nav-default">一些小好奇</span>
+      <a class="next" href="/fountainpomelo.github.io/2017/07/18/图片优化/">
+        <span class="next-text nav-default">图片优化</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>

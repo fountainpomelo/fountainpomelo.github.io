@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0"> 
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="前端遍历的情况好多呀">
+
+
+
+
+  <meta name="keywords" content="前端开发，阴阳师，云之遏，阿嘤嘤嘤酱">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
+
+
+
+<link rel="canonical" href="http://fountainyys.cn/2017/02/27/几种循环/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 几种循环 - 荒地 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/fountainpomelo.github.io/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/tags/">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          几种循环
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2月 27
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环"><span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for-in"><span class="toc-text">for in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for-of"><span class="toc-text">for of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#forEach"><span class="toc-text">[].forEach()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-text">[].map()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jq中的-each"><span class="toc-text">jq中的$.each</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>对象无法直接被for循环遍历</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3, 4, 5];</span><br><span class="line">for (var i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">  console.log(a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h2><p>遍历的是键名，为普通对象设计，用于遍历数组不太合适</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj=&#123; name:&quot;ccc&quot;,age:18 &#125;;</span><br><span class="line">var key;</span><br><span class="line">for( key in obj)&#123;</span><br><span class="line">    console.log(key); // &apos;name&apos; &apos;age&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h2><p>只遍历数组中的每一项，不遍历键名，最简洁、最直接的遍历数组元素的语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3];</span><br><span class="line">for(var i of arr)&#123;</span><br><span class="line">  console.log(i);   // 1 2 3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>ES6中对象属性</p>
+<ul>
+<li><p>Object.keys()遍历属性<br>返回对象自身的所有（不含继承的）可枚举属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1,b:2,c:3&#125;</span><br><span class="line">Object.keys(obj)  // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Object.values遍历value</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1,b:2,c:3&#125;</span><br><span class="line">Object.values(obj)  //  [1,2,3]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Object.entries遍历键值对</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1,b:2,c:3&#125;</span><br><span class="line">Object.entries(obj) //  [[&quot;a&quot;, 1],[&quot;b&quot;, 2],[&quot;c&quot;, 3]]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Object.getOwnPropertyNames遍历属性(枚举+不可枚举)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let obj=&#123;a:1,b:2,c:function()&#123;&#125;&#125;</span><br><span class="line">Object.getOwnPropertyNames(obj) // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="forEach"><a href="#forEach" class="headerlink" title="[].forEach()"></a>[].forEach()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var numbers=[1,3,5];</span><br><span class="line">numbers.forEach(function(value,index)&#123;</span><br><span class="line">    //value：表示元素的值</span><br><span class="line">    //index：表示元素的索引</span><br><span class="line">&#125;,第二个参数制定了回调函数内部的this的值，如果不传回调函数内部的this指向window);</span><br></pre></td></tr></table></figure>
+<p>对于空数组是不会执行回调函数的<br>无法遍历对象<br>无法在IE中使用，firefox和chrome实现了该方法<br>无法使用break，continue跳出循环，使用return时，效果和在for循环中使用continue一致</p>
+<h2 id="map"><a href="#map" class="headerlink" title="[].map()"></a>[].map()</h2><p>与forEach几乎无差别，map在于原数组被“映射”成对应新数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var res = ary.map(function (item,index,input) &#123;</span><br><span class="line">     return item*10;</span><br><span class="line">&#125;,target)</span><br></pre></td></tr></table></figure>
+<p>相当于把数组中的这一项改变成return的值，并不影响原来的数组，只是相当于把原数组克隆一份，改变克隆的这一份的数组中的对应项</p>
+<h2 id="jq中的-each"><a href="#jq中的-each" class="headerlink" title="jq中的$.each"></a>jq中的$.each</h2><p>遍历处理data，可以是数组、DOM、json等<br><code>$.each(Object|Array, function( index, value,array) {});</code><br><code>$(selector).each(function(index,element))</code>专门用来遍历DOMList<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var data = [</span><br><span class="line">    &#123;&quot;id&quot;:&quot;1&quot;,&quot;tagName&quot;:&quot;pink&quot;&#125;,</span><br><span class="line">    &#123;&quot;id&quot;:&quot;2&quot;,&quot;tagName&quot;:&quot;orange&quot;&#125;,</span><br><span class="line">    &#123;&quot;id&quot;:&quot;3&quot;,&quot;tagName&quot;:&quot;red&quot;&#125;</span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line">$.each(data, function(idx, obj) &#123;</span><br><span class="line">    console.log(obj.tagName); //&quot;pink&quot; &quot;orange&quot; &quot;red&quot;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://fountainyys.cn">Fountain</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://fountainyys.cn/2017/02/27/几种循环/">http://fountainyys.cn/2017/02/27/几种循环/</a>
+    </p>
+
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/fountainpomelo.github.io/2017/06/18/几种常用前端布局方式/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">几种常用前端布局方式</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/fountainpomelo.github.io/2016/12/11/藏品/">
+        <span class="next-text nav-default">藏品</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
+
+      </div>  
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"> 
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:fountain_x@outlook.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://weibo.com/u/2874806624" class="iconfont icon-weibo" title="weibo"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.douban.com/people/114544231/?dt_dapp=1" class="iconfont icon-douban" title="douban"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+
+
+  </div>
+
+ 
+
+<div class="copyright">
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+   <span class="author">Fountain</span>
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">	&amp;</span>
+  <span class="theme-info">
+  
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+
+  </body>
+</html>
