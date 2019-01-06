@@ -435,7 +435,11 @@ h6 {
 @media screen and (max-width: 950px) {
   .container {
     width: 100%;
-    box-shadow: -1px -5px 5px #cacaca; } }
+    box-shadow: -1px -5px 5px #cacaca; }
+  #posts {
+    width: 100%; }
+  #secondary {
+    display: none; } }
 
 .content-wrapper {
   padding: 0 20px; }
