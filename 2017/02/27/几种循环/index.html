@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="前端遍历的情况好多呀">
+  <meta name="description" content="几种循环">
 
 
 
@@ -146,8 +146,18 @@
   </ul>
 </nav>
 
+    
+
+
+
     <div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
+
+
+
+
+
+      <header id="header" class="header">
+       <div><div class="logo-wrapper">
   <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
 </div>
 
@@ -194,7 +204,7 @@
     </ul>
   
 </nav>
-
+</div>
       </header>
 
       <main id="main" class="main">
@@ -232,7 +242,8 @@
 
     <div class="post-content">
       
-        <h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>对象无法直接被for循环遍历</p>
+        <p>为循环而循环<br><a id="more"></a></p>
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>对象无法直接被for循环遍历</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3, 4, 5];</span><br><span class="line">for (var i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">  console.log(a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h2><p>遍历的是键名，为普通对象设计，用于遍历数组不太合适</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj=&#123; name:&quot;ccc&quot;,age:18 &#125;;</span><br><span class="line">var key;</span><br><span class="line">for( key in obj)&#123;</span><br><span class="line">    console.log(key); // &apos;name&apos; &apos;age&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

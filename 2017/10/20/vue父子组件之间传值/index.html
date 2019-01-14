@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="之前在做项目的时候遇到，点击不同的标签页，展示对应标签的内容。">
+  <meta name="description" content="vue父子之间传参">
 
 
 
@@ -90,7 +90,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
 </script>
 
-    <title> vue父子之间传参 || element-ui动态增减标签页传不同的组件 - 荒地 </title>
+    <title> vue父子之间传参 - 荒地 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -146,8 +146,18 @@
   </ul>
 </nav>
 
+    
+
+
+
     <div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
+
+
+
+
+
+      <header id="header" class="header">
+       <div><div class="logo-wrapper">
   <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
 </div>
 
@@ -194,7 +204,7 @@
     </ul>
   
 </nav>
-
+</div>
       </header>
 
       <main id="main" class="main">
@@ -206,7 +216,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          vue父子之间传参 || element-ui动态增减标签页传不同的组件
+          vue父子之间传参
         
       </h1>
 
@@ -238,6 +248,7 @@
 <li>element-ui的标签页</li>
 <li>vue父子组件以及传参</li>
 </ul>
+<a id="more"></a>
 <p>我们可以想到的最快的方法</p>
 <ol>
 <li>使用h5的自定义属性<br>也就是让a标签的data-id或者其他等于对应切换显示的内容的盒子的id或者其他，总之让a标签和内容有关系；再使用添加、移除（<code>.classList.add/remove()</code>）类名的方法显示隐藏。</li>

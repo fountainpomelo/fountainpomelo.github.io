@@ -1,7 +1,4 @@
 @charset "UTF-8";
-body {
-  font-weight: 200 !important; }
-
 @font-face {
   font-family: 'Chancery';
   src: url("../fonts/chancery/apple-chancery-webfont.eot");
@@ -386,7 +383,7 @@ body {
   body.hide-top {
     border-top: 3px solid transparent; }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 750px) {
   body {
     border-top: 0; } }
 
@@ -425,14 +422,14 @@ h5 {
   font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
 
 h6 {
-  font-size: 14px;
+  font-size: 12px;
   font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
 
 .container {
   margin: 0 auto;
-  width: 950px; }
+  width: 750px; }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 750px) {
   .container {
     width: 100%;
     box-shadow: -1px -5px 5px #cacaca; }
@@ -442,7 +439,7 @@ h6 {
     display: none; } }
 
 .content-wrapper {
-  padding: 0 20px; }
+  padding: 50px 20px 0; }
 
 .video-container {
   position: relative;
@@ -459,18 +456,29 @@ h6 {
   height: 100%; }
 
 .header {
-  padding: 20px 20px; }
+  padding: 0px 20px;
+  position: fixed;
+  background: aliceblue;
+  width: 100%;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  z-index: 999; }
   .header:before, .header:after {
     content: " ";
     display: table; }
   .header:after {
     clear: both; }
+  .header > div {
+    overflow: hidden; }
   .header .logo-wrapper {
     float: left; }
     .header .logo-wrapper .logo {
-      font-size: 48px;
+      font-size: 38px;
       font-family: "Chancery", cursive, LiSu, sans-serif; }
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 750px) {
     .header .logo-wrapper {
       display: none; } }
   .header .site-navbar {
@@ -509,18 +517,18 @@ h6 {
           left: 0; }
       .header .site-navbar .menu .menu-item-link {
         font-size: 18px; }
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 750px) {
     .header .site-navbar {
       display: none; } }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 750px) {
   .header {
     padding: 50px 0 0;
     text-align: center; } }
 
 .posts {
   margin-bottom: 20px;
-  width: 75%;
+  width: 100%;
   display: inline-block; }
 
 .post {
@@ -583,7 +591,7 @@ h6 {
   .post .post-toc {
     position: absolute;
     width: 200px;
-    margin-left: 935px;
+    margin-left: 735px;
     padding: 10px;
     font-family: sans-serif, STHeiti, Microsoft Yahei, serif;
     border-radius: 5px;
@@ -606,9 +614,13 @@ h6 {
         padding-left: 20px; }
         .post .post-toc .post-toc-content .toc .toc-child {
           padding-left: 15px; }
+      .post .post-toc .post-toc-content .toc-link {
+        font-size: 12px; }
       .post .post-toc .post-toc-content .toc-link.active {
         color: #bb1a29; }
-  @media screen and (max-width: 1335px) {
+      .post .post-toc .post-toc-content .toc-level-2 > .toc-link {
+        font-size: 14px; }
+  @media screen and (max-width: 1135px) {
     .post .post-toc {
       display: none; } }
   .post .post-content h1 {
@@ -898,7 +910,7 @@ h6 {
       color: #dc322f; }
   .post .post-content .read-more .read-more-link {
     color: #bb1a29;
-    font-size: 1.1em;
+    font-size: 0.1em;
     font-family: sans-serif, STHeiti, Microsoft Yahei, serif; }
     .post .post-content .read-more .read-more-link:hover {
       border-bottom: 1px solid #bb1a29; }
@@ -980,11 +992,14 @@ h6 {
           transform: translateX(4px); }
       .post .post-footer .post-nav .nav-mobile {
         display: none; }
-  @media screen and (max-width: 950px) {
+  @media screen and (max-width: 750px) {
     .post .post-footer .post-nav .nav-default {
       display: none; }
     .post .post-footer .post-nav .nav-mobile {
       display: inline; } }
+
+.posts1 h1 a {
+  font-size: 22px; }
 
 .pagination {
   margin: 2em 0; }
@@ -1013,7 +1028,8 @@ h6 {
       transform: translateX(4px); }
 
 .footer {
-  margin-top: 2em; }
+  margin-top: 2em;
+  background-color: transparent; }
   .footer .social-links {
     text-align: center; }
     .footer .social-links .iconfont {
@@ -1080,7 +1096,7 @@ h6 {
       .archive .archive-post:hover .archive-post-title .archive-post-link {
         color: #8e141f; }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 750px) {
   .archive {
     margin-left: auto;
     margin-right: auto; }
@@ -1386,7 +1402,7 @@ h6 {
       .mobile-menu .mobile-menu-list a:hover {
         color: #bb1a29; }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 750px) {
   .mobile-navbar {
     display: block; } }
 
@@ -1402,7 +1418,7 @@ h6 {
   .back-to-top:hover {
     transform: translateY(-5px); }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 750px) {
   .back-to-top {
     display: none !important; } }
 
@@ -1418,8 +1434,6 @@ h6 {
   border-left-color: #bb1a29; }
 
 #secondary {
-  width: 17%;
-  float: right;
   padding-top: 40px;
   color: rgba(0, 0, 0, 0.6); }
   #secondary ol, #secondary ul {
@@ -1469,3 +1483,35 @@ h6 {
   font-size: .6em;
   opacity: .6;
   top: -0.5em; }
+
+#indexPage {
+  overflow: hidden;
+  padding-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #fefefe;
+  align-items: stretch;
+  max-width: 1208px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  justify-content: center;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 12px auto 0 auto; }
+  #indexPage #posts {
+    display: flex;
+    flex-direction: column; }
+  #indexPage .post {
+    font-size: 14px;
+    display: inline-block;
+    margin: 0 1.5em; }
+  #indexPage .post-title {
+    font-size: 18px;
+    font-weight: 600 !important; }
+
+body {
+  font-weight: 200 !important; }

@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="对首屏加载缓慢采取的一些措施">
+  <meta name="description" content="Vue单页面首屏加载慢">
 
 
 
@@ -146,8 +146,18 @@
   </ul>
 </nav>
 
+    
+
+
+
     <div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
+
+
+
+
+
+      <header id="header" class="header">
+       <div><div class="logo-wrapper">
   <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
 </div>
 
@@ -194,7 +204,7 @@
     </ul>
   
 </nav>
-
+</div>
       </header>
 
       <main id="main" class="main">
@@ -235,8 +245,7 @@
         <p>未使用vue的时候听说过vue首屏加载会遇到白屏的情况，打包构建应用时，Javascript 包会变得非常大，影响页面加载，进入首页时，需要加载的内容过多，会导致白屏很长一段时间，当时我毫不在意。</p>
 <p>但最近我也发现我的项目在测试服打开的时候白屏很长一段时间，首页加载真是个灾难！远远超出了我的秒开预期，测试也乐着告诉我：你看打开一片白的，加载太慢了吧。我理不直气也壮，告诉他：我知道啦！！</p>
 <p>有问题就要面对呀，作为一位桀骜不驯的90后。我知道必须要实现常提的问题： 压缩和按需加载<br>然后立马查文档，“东拼西凑”。</p>
-<h2 id="服务器开启Gzip"><a href="#服务器开启Gzip" class="headerlink" title="服务器开启Gzip"></a>服务器开启Gzip</h2><p>开启gzip达到的效果是最显而易见的<a href="https://zhuanlan.zhihu.com/p/24764131" target="_blank" rel="noopener">参考</a></p>
-<p>使用 <code>vue-cli</code> 生成的项目，已默认配好相关的设置。发现 <code>config/index.js</code> 下的 <code>productionGzip: false</code>，改成 <code>true</code> 开启。</p>
+<h2 id="服务器开启Gzip"><a href="#服务器开启Gzip" class="headerlink" title="服务器开启Gzip"></a>服务器开启Gzip</h2><p>开启gzip达到的效果是最显而易见的<a href="https://zhuanlan.zhihu.com/p/24764131" target="_blank" rel="noopener">参考</a><br><a id="more"></a><br>使用 <code>vue-cli</code> 生成的项目，已默认配好相关的设置。发现 <code>config/index.js</code> 下的 <code>productionGzip: false</code>，改成 <code>true</code> 开启。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Gzip off by default as many popular static hosts such as</span><br><span class="line">// Surge or Netlify already gzip all static assets for you.</span><br><span class="line">// Before setting to `true`, make sure to:</span><br><span class="line">// npm install --save-dev compression-webpack-plugin</span><br><span class="line"></span><br><span class="line">productionGzip: true,</span><br><span class="line">productionGzipExtensions: [&apos;js&apos;, &apos;css&apos;],</span><br></pre></td></tr></table></figure>
 <p>脚手架提醒我们安装<code>compression-webpack-plugin</code>；</p>
 <p>在 <code>webpack.prod.conf.js</code> 可以发现有一串代码，如下： </p>
@@ -321,8 +330,8 @@
       </a>
     
     
-      <a class="next" href="/fountainpomelo.github.io/2018/06/03/那些跨域问题/">
-        <span class="next-text nav-default">那些跨域问题</span>
+      <a class="next" href="/fountainpomelo.github.io/2018/08/28/react学习记录/">
+        <span class="next-text nav-default">React学习记录（基础复习）</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>

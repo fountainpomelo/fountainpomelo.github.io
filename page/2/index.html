@@ -144,8 +144,18 @@
   </ul>
 </nav>
 
+    
+
+
+
     <div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
+
+
+
+
+
+      <header id="header" class="header">
+       <div><div class="logo-wrapper">
   <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
 </div>
 
@@ -192,7 +202,7 @@
     </ul>
   
 </nav>
-
+</div>
       </header>
 
       <main id="main" class="main">
@@ -200,8 +210,106 @@
           <div id="content" class="content">
             
   
-  <section id="posts" class="posts">
+  <section id="posts" class="posts posts1">
     
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2017/07/16/vue-cli项目运行一片空白/">vue-cli项目运行一片空白</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          7月 16
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <p>按照vue-cli构建的vue项目在 <code>npm start</code> 后本地 localhost 打开确是一片空白<br></p>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/07/16/vue-cli项目运行一片空白/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2017/06/18/几种常用前端布局方式/">几种常用前端布局方式</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          6月 18
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <ul>
+<li>前言<ul>
+<li><a href="#flex">flex</a></li>
+<li><a href="#static">静态布局</a></li>
+<li><a href="#guding">固定页面宽度</a></li>
+<li><a href="#Liquid">百分比布局（流式布局）</a></li>
+<li><a href="#Responsive">响应式布局</a></li>
+<li><a href="#rem">rem布局</a></li>
+<li><a href="#viewport">viewport</a></li></ul></li></ul>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/06/18/几种常用前端布局方式/" class="read-more-link">阅读更多</a>
+          </div>
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
       
         
   <article class="post">
@@ -229,13 +337,15 @@
       
         
         
+          
+        
 
         
           <p><code>artTemplate</code>是腾讯开源的前端模版引擎，<a href="https://aui.github.io/art-template/zh-cn/docs/installation.html#Npm" target="_blank" rel="noopener">文档地址</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 目标位置</span><br><span class="line">&lt;section id=&quot;content&quot;&gt;&lt;/section&gt;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 引用</span><br><span class="line">&lt;script src=&quot;./lib/template-web.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">// 模版</span><br><span class="line">&lt;script id=&quot;Template&quot; type=&quot;text/html&quot;&gt;</span><br><span class="line">&#123;&#123;each $data val id&#125;&#125;</span><br><span class="line">&lt;div class=&quot;detail&quot;&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;img src=&quot;&#123;&#123;val.img&#125;&#125;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;ul class=&quot;photoquick&quot;&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">        &lt;h6&gt;&#123;&#123;val.title&#125;&#125;&lt;/h6&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123;val.jianjie&#125;&#125;</span><br><span class="line">            &lt;a href=&quot;./hot.html?k=h&amp;id=&#123;&#123;val.id&#125;&#125;&quot; target=&quot;_blank&quot;  class=&quot;pull-right&quot;&gt;阅读全文 &gt; &lt;/a&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;span class=&quot;img&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;./img/qing.png&quot; alt=&quot;大头贴&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span  class=&quot;myspan&quot;&gt; 氢元小编&lt;/span&gt;</span><br><span class="line">            &lt;i class=&quot;icoo i-time&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span&gt;2017/12/30&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;&#123;/each&#125;&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 使用</span><br><span class="line">var html = template(&apos;Template&apos;, data);</span><br><span class="line">document.getElementById(&apos;content&apos;).innerHTML = html;</span><br></pre></td></tr></table></figure>
-
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/03/30/artTemplate简单使用/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -277,8 +387,10 @@
         
 
         
-          <p>前端遍历的情况好多呀</p>
-        
+          <p>为循环而循环<br></p>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/02/27/几种循环/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -321,7 +433,9 @@
 
         
           <p>收藏了一些插件和软件</p>
-        
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2016/12/11/藏品/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -363,8 +477,10 @@
         
 
         
-          <p>刚开始学css对网页的好奇收集</p>
-        
+          <p>刚开始学css对网页的好奇收集，这也许是最基本的一些操作，但对于当时不知道的我来说，还是这么新奇。<br></p>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2016/03/26/一些小好奇/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -406,8 +522,13 @@
         
 
         
-          <p>markdown</p>
-        
+          <p><code>markdown支持html语法</code></p>
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>单一段落用一个空白行</p>
+<p>连续两个空格 会变成一个 </p>
+<p>连续3个符号，然后是空行，表示 <code>hr</code> 横线<br></p>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2015/12/18/markdown简单语法/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -433,20 +554,7 @@
 
     
   </section>
-      <div id="secondary">
-    
-    <section id="tags" class="widget-area widget_tags">
-        <h3 class="widget-title">标签 </h3>
-        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/fountainpomelo.github.io/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/fountainpomelo.github.io/tags/vue/">vue</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/fountainpomelo.github.io/tags/碎碎念/">碎碎念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/fountainpomelo.github.io/tags/藏品/">藏品</a><span class="tag-list-count">1</span></li></ul>
-    </section>
-
-
-    
-
-    
-
-</div>
-
+  
 
           </div>
           

@@ -144,8 +144,18 @@
   </ul>
 </nav>
 
+    
+
+
+
     <div class="container" id="mobile-panel">
-      <header id="header" class="header"><div class="logo-wrapper">
+
+
+
+
+
+      <header id="header" class="header">
+       <div><div class="logo-wrapper">
   <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
 </div>
 
@@ -192,7 +202,7 @@
     </ul>
   
 </nav>
-
+</div>
       </header>
 
       <main id="main" class="main">
@@ -200,8 +210,61 @@
           <div id="content" class="content">
             
   
-  <section id="posts" class="posts">
+  <section id="posts" class="posts posts1">
     
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2019/01/14/2018年末回顾/">2018年末回顾</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          1月 14
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <p>转眼就2019年了，跟了我两年多的MacPro的<code>commmand</code>键近来有些不灵敏。</p>
+<p>近来越发地紧张自己，尤其是学了《美学》这门课程之后。在毕业的这几年，我坐在前端开发工程师的岗位上，我似始终如一，但变幻莫测的前端行业，每天似乎都涌进着不少人，Vue、React还有兴冲冲的微信小程序，从我几年前的接触学习到今日，仿佛一个看你技术好不好在于dom操作6⃣️不6⃣️的JQuery时代，一下子这个时代开始没落了，但这是一个好现象。</p>
+<p>唯一让我觉得贫乏的依旧是“内容”。</p>
+<p>今年的我开始不阅读公众号了，我只是关注一下实时新闻，偶尔查看一下各篇爆文看看大家的看法，公众号在我眼里，太浪费时间了。</p>
+<p>我14年注册了一个个人公众号，文章我每每发了又删，或者过了很久以后再看自己写的文章，内容简直不能看，后来的小程序也是，我不知道我要什么，我做不出东西，我甚至没有创意，我大概是和人交流地太少了。</p>
+<p>我从来没有推广过自己的公众号，哪怕是在朋友圈，所以至今为止只有10人左右的粉丝，同期注册的MONO小站，也因贫瘠无法继续。我知道，我是一个没有才华的人，我站在这个世界，我再渺小不过，我不愿意写这我不愿意写那，提着笔不知挥向何处。</p>
+<p>做技术的人身上总会有一股子傲气。</p>
+<p>我不知道如何形容那些站在门口说这个好这个不好这个我懂这个我以前用过的人，但是我知道哪些人是值得我尊敬的。对于诸如“把这个地方改一下，怎么改你看着办；”这样的需求，我也极力引导对方朝具体的目的去，不过说实话，真的累。</p>
+<p>18年过生日时，我给自己列了一个给自己看的生日清单，都是大件。年末时这张清单又添了许多，人的欲望真的是无穷无尽的，我感谢这样的欲望。</p>
+<p>再说说身体健康这回事吧。</p>
+<p>身体健康总是排在第一位的，19年年初时，突然得知外公股骨头坏死开完刀在康复中，谁谁谁从医院回来一直卧床，谁谁谁的手感染了一直肿着。</p>
+<p>去医院的路上，我开始担忧，我想到《不是药神》、“穷病”，我想到露露之前莫名其妙跟我说“要养成良好的生活习惯，健康最重要”，我想着，真的不能生大病。</p>
+<p>我希望2019年每个人都好好的。</p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
       
         
   <article class="post">
@@ -233,8 +296,11 @@
         
 
         
-          <p>“手甩得像个雨刮器”</p>
-        
+          <p>周五时，下了班我坐一辆公交车回家，又遇见了可萌可萌的祖孙俩，我只要周五坐这趟公交，我准会遇到。</p>
+<p>小孩在后面的园区上幼儿园，一周回一次家，我感想着现在连幼儿园都要住校了，中国的小孩儿也被学习了吧，周五才能由孩子他奶奶接回家，这天老奶奶正在很认真的教育孙子不要总是嚷嚷着回家，没有为什么。<br></p>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2018/12/17/公交车碎碎念/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -276,8 +342,64 @@
         
 
         
-          <p>对首屏加载缓慢采取的一些措施</p>
+          <p>未使用vue的时候听说过vue首屏加载会遇到白屏的情况，打包构建应用时，Javascript 包会变得非常大，影响页面加载，进入首页时，需要加载的内容过多，会导致白屏很长一段时间，当时我毫不在意。</p>
+<p>但最近我也发现我的项目在测试服打开的时候白屏很长一段时间，首页加载真是个灾难！远远超出了我的秒开预期，测试也乐着告诉我：你看打开一片白的，加载太慢了吧。我理不直气也壮，告诉他：我知道啦！！</p>
+<p>有问题就要面对呀，作为一位桀骜不驯的90后。我知道必须要实现常提的问题： 压缩和按需加载<br>然后立马查文档，“东拼西凑”。</p>
+<h2 id="服务器开启Gzip"><a href="#服务器开启Gzip" class="headerlink" title="服务器开启Gzip"></a>服务器开启Gzip</h2><p>开启gzip达到的效果是最显而易见的<a href="https://zhuanlan.zhihu.com/p/24764131" target="_blank" rel="noopener">参考</a><br></p>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2018/09/28/Vue单页面首屏加载慢/" class="read-more-link">阅读更多</a>
+          </div>
         
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+      
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          <a class="post-link" href="/fountainpomelo.github.io/2018/08/28/react学习记录/">React学习记录（基础复习）</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          8月 28
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        
+        
+          
+        
+
+        
+          <h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<li><a href="https://reactjs.org/docs/hello-world.html" target="_blank" rel="noopener">react官方网站</a></li>
+<li><a href="https://react.docschina.org/" target="_blank" rel="noopener">react中文文档</a></li>
+<li><a href="https://reacttraining.com/react-router/web/guides/basic-components" target="_blank" rel="noopener">react-router官网</a></li>
+<li><a href="http://cn.redux.js.org/" target="_blank" rel="noopener">redux</a></li>
+</ul>
+<p>我在公司使用频率最高的框架还是非常容易上手的<code>Vue</code>，我翻到了去年匆匆忙忙学习<code>React</code>时做过的小<code>demo</code>，里面不整齐地掺了各种小例子，主要是<code>React</code>的基本运用，还有最实际的若与后台交互获取到数据后到页面的渲染，结合<code>ant-ui</code>等<code>UI</code>小助手，会发现<code>React</code>其实特别有意思，接下来，跟着我的胡言乱语了解一下<code>React</code>8⃣️。<br></p>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2018/08/28/react学习记录/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -320,7 +442,9 @@
 
         
           <p>面试的时候，10家有8家会问你跨域问题，这个问题迷一样粘着前端开发者，面试前默默背下几个方案，面试过后扔到一边，实际的工作，随便搬几块砖解决问题，但还是决定了解地再深一点。<br></p>
-        
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2018/06/03/那些跨域问题/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -362,8 +486,10 @@
         
 
         
-          <p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。</p>
-        
+          <p>VUE及社区的文档都非常友好，先打开 <a href="https://vuex.vuejs.org/zh/" target="_blank" rel="noopener">VUEX文档</a>：Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。<br></p>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/11/24/vuex简单使用/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -380,7 +506,7 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/fountainpomelo.github.io/2017/10/20/vue父子组件之间传值/">vue父子之间传参 || element-ui动态增减标签页传不同的组件</a>
+          <a class="post-link" href="/fountainpomelo.github.io/2017/10/20/vue父子组件之间传值/">vue父子之间传参</a>
         
       </h1>
 
@@ -406,7 +532,14 @@
 
         
           <p>之前在做项目的时候遇到，点击不同的标签页，展示对应标签的内容。</p>
-        
+<p>本文主要涉及</p>
+<ul>
+<li>element-ui的标签页</li>
+<li>vue父子组件以及传参</li>
+</ul>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/10/20/vue父子组件之间传值/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -448,8 +581,11 @@
         
 
         
-          <p>emmmmm</p>
-        
+          <ul>
+<li>vue-cli构建项目（vue + webpack）</li></ul>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/08/20/vue全家桶/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -491,8 +627,20 @@
         
 
         
-          <p>模块化学习总结</p>
-        
+          <p>让我们再回忆一下那个打开网站页面广告飘来飘去的时代，但在当时看来，这也许是一件极为正常的事情。</p>
+<p>那个时候并没有前端工程师，页面没有这时候这么美观，需求也没有这么复杂，工程师在页面上随便写写js就能搞定需求。</p>
+<p>如果你用原生js写过项目，你一定会遇到这些问题：</p>
+<ol>
+<li><p>尴尬的全局变量<br>Js出了名的弱语言类型，变量作用域闭包原型链问题也成为面试笔试部分的一道靓丽的风景线。Js只有函数作用域，没有块级作用域，即使是if/for等有{}的结构体，也并不能具备自己的作用域。</p>
+</li>
+<li><p>函数命名冲突<br>唔，本身起名字也是一件稍费神的事情。如果你刚接手了一个项目，小王同学已经写了一半了，此时你进入项目，很巧的你想要实现一个跟小王同学之前写过的一个类似的功能函数，你可能会十分担心自己的函数名字是否会跟小王同学起的函数名字冲突，只能用一种丑陋的方式进行（偷偷在函数名字后面加个1）。</p>
+</li>
+<li><p>依赖关系<br>自上而下的执行方式使得如果<code>b.js</code>依赖<code>a.js</code>，引入<code>a.js</code>的<code>&lt;script&gt;</code>标签就必须写在<code>b.js</code>前面</p>
+</li>
+</ol>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/07/28/Js模块化/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -534,94 +682,13 @@
         
 
         
-          <p>关于</p>
-        
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/fountainpomelo.github.io/2017/07/16/vue-cli项目运行一片空白/">vue-cli项目运行一片空白</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          7月 16
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>按照vue-cli构建的vue项目在 `npm start` 后本地 localhost 打开确是一片空白</p>
-        
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/fountainpomelo.github.io/2017/06/18/几种常用前端布局方式/">几种常用前端布局方式</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          6月 18
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>flex弹性布局、rem布局、流式布局等</p>
-        
+          <ul>
+<li><p>加快网页加载速度<br>浏览器接受的同时请求数是10个，如果图片过多会影响整体的视觉效果，遇到不稳定的网络带宽，简直噩梦，把图片拼接为一张大图，从而加快加载速度，加速页面渲染。</p>
+</li>
+<li><p>后期维护简单</p></li></ul>
+         <div class="read-more">
+            <a href="/fountainpomelo.github.io/2017/07/18/图片优化/" class="read-more-link">阅读更多</a>
+          </div>
         
       
     </div>
@@ -647,20 +714,7 @@
 
     
   </section>
-      <div id="secondary">
-    
-    <section id="tags" class="widget-area widget_tags">
-        <h3 class="widget-title">标签 </h3>
-        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/fountainpomelo.github.io/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/fountainpomelo.github.io/tags/vue/">vue</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/fountainpomelo.github.io/tags/碎碎念/">碎碎念</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/fountainpomelo.github.io/tags/藏品/">藏品</a><span class="tag-list-count">1</span></li></ul>
-    </section>
-
-
-    
-
-    
-
-</div>
-
+  
 
           </div>
           

@@ -5,7 +5,7 @@
     this.config = config;
   }
 
-  Even.prototype.setup = function() {
+  Even.prototype.setup = function () {
     var leancloud = this.config.leancloud;
 
     this.navbar();
@@ -57,7 +57,7 @@
   };
 
   Even.prototype.scrollToc = function () {
-    var SPACING = 20;
+    var SPACING = 110;
     var $toc = $('.post-toc');
     var $footer = $('.post-footer');
 
@@ -68,7 +68,8 @@
       var tocState = {
         start: {
           'position': 'absolute',
-          'top': minScrollTop
+          'top': SPACING
+          // minScrollTop
         },
         process: {
           'position': 'fixed',
@@ -245,4 +246,13 @@
   var config = window.config;
   var even = new Even(config);
   even.setup();
+
+  // if (window.location.pathname == '/fountainpomelo.github.io/' ) {
+  //   $('.container').css({ minHeight: 'auto', width: 'auto' })
+  //   $('#main').css({ height: '0' })
+  // } else {
+  //   $('#secondary').css({ display: 'none' })
+  // }
+
+
 }(window))
