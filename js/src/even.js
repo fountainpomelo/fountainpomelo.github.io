@@ -253,6 +253,26 @@
   // } else {
   //   $('#secondary').css({ display: 'none' })
   // }
+  var OriginTitile = document.title;
+  var titleTime;
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+      document.title = '(つェ⊂)快点回来鸭~ ' + OriginTitile;
+      clearTimeout(titleTime);
+    }
+    else {
+      document.title = '(*´∇｀*)遇见你真好鸭~ ' + OriginTitile;
+      titleTime = setTimeout(function () {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+  });
+
+
+  var myElement = document.querySelector("header");
+  var headroom = new Headroom(myElement);
+  headroom.init();
+
 
 
 }(window))
