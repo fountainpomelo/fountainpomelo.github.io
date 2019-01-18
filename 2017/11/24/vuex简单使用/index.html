@@ -33,10 +33,12 @@
 
 
 
-  <link rel="alternate" href="/fountainpomelo.github.io/atom.xml" title="荒地">
+  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
 
 
 
+
+  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
 
 
 
@@ -44,12 +46,16 @@
 
 
 
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
 
 
 
 
+  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
 
-<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=">
+
+
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
 
 
 
@@ -76,12 +82,20 @@
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.1.1/av-min.js"></script>
+  <script id="leancloud">
+    AV.init({
+      appId: "39Ycb57ktFbAKJP76Iw0VeDK-gzGzoHsz",
+      appKey: "npNykeRVozd1FgKAahxFdQxa"
+    });
+  </script>
+
 
 
 
 
 <script>
-  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":""};
+  window.config = {"leancloud":{"app_id":"39Ycb57ktFbAKJP76Iw0VeDK-gzGzoHsz","app_key":"npNykeRVozd1FgKAahxFdQxa"},"toc":true,"fancybox":true,"pjax":true};
 </script>
 
     <title> vuex简单使用 - 荒地 </title>
@@ -101,6 +115,42 @@
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     
+      <a href="/fountainpomelo.github.io/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/tags/">
+        <li class="mobile-menu-item">
+          
+          
+            标签
+          
+        </li>
+      </a>
+    
+      <a href="/fountainpomelo.github.io/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
   </ul>
 </nav>
     
@@ -119,6 +169,46 @@
 </div>
 
 <nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
+            
+            
+              标签
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
   
 </nav>
 </div>
@@ -142,12 +232,23 @@
           11月 24
         </span>
         
+         
+          <span class="post-visits" data-url="/fountainpomelo.github.io/2017/11/24/vuex简单使用/" data-title="vuex简单使用">
+            阅读次数 0
+          </span>
         
       </div>
     </header>
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#state"><span class="toc-text">state</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mutations"><span class="toc-text">mutations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Getter"><span class="toc-text">Getter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Module"><span class="toc-text">Module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Action"><span class="toc-text">Action</span></a></li></ol>
+    </div>
+  </div>
+
 
 
     <div class="post-content">
@@ -190,6 +291,18 @@
     
       
       
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://fountainyys.cn">fountainyys.cn</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://fountainyys.cn/2017/11/24/vuex简单使用/">http://fountainyys.cn/2017/11/24/vuex简单使用/</a>
+    </p>
+
+  </div>
 
 
 
@@ -236,6 +349,10 @@
           
   <div class="comments" id="comments">
     
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
+
+      </div>  
+    
   </div>
 
 
@@ -244,12 +361,62 @@
 
       <footer id="footer" class="footer"> 
 
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:fountain_x@outlook.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://weibo.com/u/2874806624" class="iconfont icon-weibo" title="weibo"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.douban.com/people/114544231/?dt_dapp=1" class="iconfont icon-douban" title="douban"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://www.instagram.com/fangting852/" class="iconfont icon-instagram" title="instagram"></a>
+        
+      
+    
+
+
+  </div>
+
  
 
 <div class="copyright">
   <span class="copyright-year">
     
     &copy; 
+     
+      2015 - 
     
     2019
    <span class="author">fountainyys.cn</span>
@@ -276,11 +443,30 @@
   
 
   
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
 
 
 
     
+  
 
+
+
+  
+  
 
 
 
@@ -295,15 +481,21 @@
   
 
   
-
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
   
 
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
   
 
 
     <script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
 <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
-<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v="></script>
+<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
 
   </body>
 </html>

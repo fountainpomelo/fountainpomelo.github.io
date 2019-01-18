@@ -272,38 +272,4 @@
   var headroom = new Headroom(myElement);
   headroom.init();
 
-
-// h5拖放
-  var from = document.querySelector(".from");
-  var to = document.querySelector(".to");
-  var move = document.querySelector(".move");
-  to.ondragover = function (target) {
-    //禁用默认事件
-    target.preventDefault();
-  }
-
-  //drop： 放下， 松手
-  to.ondrop = function () {
-    to.appendChild(move);
-  }
-
-  from.ondragover = function (target) {
-    //禁用默认事件
-    target.preventDefault();
-  }
-
-  //drop： 放下， 松手
-  from.ondrop = function () {
-    from.appendChild(move);
-  }
-
-  move.ondragstart = function (e) {
-    var img = new Image();
-    img.src = '/fountainpomelo.github.io/2017/11/17/h5拖放/灯笼.png'
-    e.dataTransfer.setDragImage(img, 20, 20);
-
-    e.dataTransfer.effectAllowed = "move";//必须在dragstart中设置effectStart
-  }
-//h5拖放结束
-
 }(window))
