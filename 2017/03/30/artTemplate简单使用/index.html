@@ -33,12 +33,10 @@
 
 
 
-  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
+  <link rel="alternate" href="/fountainpomelo.github.io/atom.xml" title="荒地">
 
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
 
 
 
@@ -46,16 +44,12 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
 
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
 
-
-
-<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=">
 
 
 
@@ -87,7 +81,7 @@
 
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":""};
 </script>
 
     <title> artTemplate简单使用 - 荒地 </title>
@@ -107,42 +101,6 @@
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     
-      <a href="/fountainpomelo.github.io/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/tags/">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
   </ul>
 </nav>
     
@@ -161,46 +119,6 @@
 </div>
 
 <nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/">
-            
-            
-              首页
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
-            
-            
-              归档
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
-            
-            
-              标签
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
-            
-            
-              关于
-            
-          </a>
-        </li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -235,11 +153,11 @@
     <div class="post-content">
       
         <p><code>artTemplate</code>是腾讯开源的前端模版引擎，<a href="https://aui.github.io/art-template/zh-cn/docs/installation.html#Npm" target="_blank" rel="noopener">文档地址</a></p>
-<p>目标位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;section id=&quot;content&quot;&gt;&lt;/section&gt;</span><br></pre></td></tr></table></figure></p>
-<p>引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;./lib/template-web.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>目标位置<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;section id=<span class="string">"content"</span>&gt;&lt;/section&gt;</span><br></pre></td></tr></table></figure></p>
+<p>引用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"./lib/template-web.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>模版<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;script id=&quot;Template&quot; type=&quot;text/html&quot;&gt;</span><br><span class="line">&#123;&#123;each $data val id&#125;&#125;</span><br><span class="line">&lt;div class=&quot;detail&quot;&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;img src=&quot;&#123;&#123;val.img&#125;&#125;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;ul class=&quot;photoquick&quot;&gt;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">        &lt;h6&gt;&#123;&#123;val.title&#125;&#125;&lt;/h6&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123;val.jianjie&#125;&#125;</span><br><span class="line">            &lt;a href=&quot;./hot.html?k=h&amp;id=&#123;&#123;val.id&#125;&#125;&quot; target=&quot;_blank&quot;  class=&quot;pull-right&quot;&gt;阅读全文 &gt; &lt;/a&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;span class=&quot;img&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;./img/qing.png&quot; alt=&quot;大头贴&quot;&gt;</span><br><span class="line">            &lt;/span&gt;</span><br><span class="line">            &lt;span  class=&quot;myspan&quot;&gt; 氢元小编&lt;/span&gt;</span><br><span class="line">            &lt;i class=&quot;icoo i-time&quot;&gt;&lt;/i&gt;</span><br><span class="line">            &lt;span&gt;2017/12/30&lt;/span&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&#123;&#123;/each&#125;&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p>使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var html = template(&apos;Template&apos;, data);</span><br><span class="line">document.getElementById(&apos;content&apos;).innerHTML = html;</span><br></pre></td></tr></table></figure></p>
+<p>模版<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;script id=<span class="string">"Template"</span> type=<span class="string">"text/html"</span>&gt;</span><br><span class="line">&#123;&#123;each $data val id&#125;&#125;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"detail"</span>&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;img src=<span class="string">"&#123;&#123;val.img&#125;&#125;"</span> alt=<span class="string">""</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;ul class="photoquick"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;h6&gt;&#123;&#123;val.title&#125;&#125;&lt;/</span>h6&gt;</span><br><span class="line">        &lt;p&gt;&#123;&#123;val.jianjie&#125;&#125;</span><br><span class="line">            &lt;a href=<span class="string">"./hot.html?k=h&amp;id=&#123;&#123;val.id&#125;&#125;"</span> target=<span class="string">"_blank"</span>  <span class="class"><span class="keyword">class</span></span>=<span class="string">"pull-right"</span>&gt;阅读全文 &gt; &lt;/a&gt;</span><br><span class="line">        &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &lt;div&gt;</span></span><br><span class="line"><span class="regexp">            &lt;span class="img"&gt;</span></span><br><span class="line"><span class="regexp">                &lt;img src="./img</span><span class="regexp">/qing.png" alt="大头贴"&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>span&gt;</span><br><span class="line">            &lt;span  <span class="class"><span class="keyword">class</span></span>=<span class="string">"myspan"</span>&gt; 氢元小编&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">            &lt;i class="icoo i-time"&gt;&lt;/i</span>&gt;</span><br><span class="line">            &lt;span&gt;<span class="number">2017</span>/<span class="number">12</span>/<span class="number">30</span>&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">&lt;/u</span>l&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&#123;&#123;/</span>each&#125;&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> html = template(<span class="string">'Template'</span>, data);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'content'</span>).innerHTML = html;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -247,18 +165,6 @@
     
       
       
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="http://fountainyys.cn">fountainyys.cn</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="http://fountainyys.cn/2017/03/30/artTemplate简单使用/">http://fountainyys.cn/2017/03/30/artTemplate简单使用/</a>
-    </p>
-
-  </div>
 
 
 
@@ -299,10 +205,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
-
-      </div>  
-    
   </div>
 
 
@@ -311,58 +213,12 @@
 
       <footer id="footer" class="footer"> 
 
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:fountain_x@outlook.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://weibo.com/u/2874806624" class="iconfont icon-weibo" title="weibo"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://www.douban.com/people/114544231/?dt_dapp=1" class="iconfont icon-douban" title="douban"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-
-
-  </div>
-
  
 
 <div class="copyright">
   <span class="copyright-year">
     
     &copy; 
-     
-      2015 - 
     
     2019
    <span class="author">fountainyys.cn</span>
@@ -389,30 +245,11 @@
   
 
   
-   <script type="text/javascript">
-	(function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-  </script>
-
 
 
 
     
-  
 
-
-
-  
-  
 
 
 
@@ -427,21 +264,15 @@
   
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
-  
 
-  
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
   
 
 
     <script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
 <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
-<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v="></script>
 
   </body>
 </html>

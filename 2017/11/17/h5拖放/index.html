@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0"> 
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="h5拖放">
+
+
+
+
+  <meta name="keywords" content="前端开发，阴阳师，云之遏，阿嘤嘤嘤酱">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/fountainpomelo.github.io/atom.xml" title="荒地">
+
+
+
+
+
+
+<link rel="canonical" href="http://fountainyys.cn/2017/11/17/h5拖放/">
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":""};
+</script>
+
+    <title> h5拖放 - 荒地 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+  </ul>
+</nav>
+    
+
+
+
+    <div class="container" id="mobile-panel">
+
+
+
+
+
+      <header id="header" class="header">
+       <div><div class="logo-wrapper">
+  <a href="/fountainpomelo.github.io/." class="logo">荒地</a>
+</div>
+
+<nav class="site-navbar">
+  
+</nav>
+</div>
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          h5拖放
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          11月 17
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+
+    <div class="post-content">
+      
+        <p>举一个小栗子🌰，红色小盒子想要拖动：<br><a id="more"></a></p>
+<p></p><p>从这个盒子</p><div class="from" style="width: 100px;height: 100px;background-color: yellowgreen;"><div class="move" draggable="true" style="width: 50px;height: 50px;background-color: red;"></div></div><p>到这个盒子</p><div class="to" style="width: 100px;height: 100px;background-color: yellowgreen;"></div><p></p>
+<p>设置<code>draggable=&quot;true&quot;</code>能使元素被拖动。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">from</span> = <span class="built_in">document</span>.querySelector(<span class="string">".frombox"</span>);</span><br><span class="line"><span class="keyword">var</span> to = <span class="built_in">document</span>.querySelector(<span class="string">".tobox"</span>);</span><br><span class="line"><span class="keyword">var</span> move = <span class="built_in">document</span>.querySelector(<span class="string">".movebox"</span>);</span><br><span class="line">to.ondragover = <span class="function"><span class="keyword">function</span> (<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//禁用默认事件</span></span><br><span class="line">  target.preventDefault();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//drop： 放下， 松手</span></span><br><span class="line">to.ondrop = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  to.appendChild(move);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span>.ondragover = <span class="function"><span class="keyword">function</span> (<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//禁用默认事件</span></span><br><span class="line">  target.preventDefault();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//drop： 放下， 松手</span></span><br><span class="line"><span class="keyword">from</span>.ondrop = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">from</span>.appendChild(move);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="更改拖放过程中的图片"><a href="#更改拖放过程中的图片" class="headerlink" title="更改拖放过程中的图片"></a>更改拖放过程中的图片</h2><p><code>DataTransfer.setDragImage(img, xOffset, yOffset)</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">move.ondragstart = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// console.log("dragStart");</span></span><br><span class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image(); </span><br><span class="line">    img.src = <span class="string">'./灯笼.png'</span>; </span><br><span class="line">    e.dataTransfer.setDragImage(img, <span class="number">20</span>, <span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">    e.dataTransfer.effectAllowed = <span class="string">"move"</span>;<span class="comment">//设置拖动过程中的鼠标形象</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/fountainpomelo.github.io/tags/css/">css</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/fountainpomelo.github.io/2017/11/18/分享到微信带缩略图/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">分享到微信带缩略图</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/fountainpomelo.github.io/2017/10/20/vue父子组件之间传值/">
+        <span class="next-text nav-default">vue父子之间传参</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer"> 
+
+ 
+
+<div class="copyright">
+  <span class="copyright-year">
+    
+    &copy; 
+    
+    2019
+   <span class="author">fountainyys.cn</span>
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">	&amp;</span>
+  <span class="theme-info">
+  
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/fountainpomelo.github.io/lib/slideout/slideout.js"></script>
+  
+
+  
+
+  
+
+  
+
+
+    <script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
+<script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
+<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v="></script>
+
+  </body>
+</html>

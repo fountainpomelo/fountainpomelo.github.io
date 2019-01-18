@@ -33,12 +33,10 @@
 
 
 
-  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
+  <link rel="alternate" href="/fountainpomelo.github.io/atom.xml" title="荒地">
 
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
 
 
 
@@ -46,16 +44,12 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
 
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
 
-
-
-<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=">
 
 
 
@@ -87,7 +81,7 @@
 
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":""};
 </script>
 
     <title> 几种循环 - 荒地 </title>
@@ -107,42 +101,6 @@
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     
-      <a href="/fountainpomelo.github.io/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/tags/">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
   </ul>
 </nav>
     
@@ -161,46 +119,6 @@
 </div>
 
 <nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/">
-            
-            
-              首页
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
-            
-            
-              归档
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
-            
-            
-              标签
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
-            
-            
-              关于
-            
-          </a>
-        </li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -230,48 +148,41 @@
 
     
     
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#for循环"><span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for-in"><span class="toc-text">for in</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for-of"><span class="toc-text">for of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#forEach"><span class="toc-text">[].forEach()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map"><span class="toc-text">[].map()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jq中的-each"><span class="toc-text">jq中的$.each</span></a></li></ol>
-    </div>
-  </div>
-
 
 
     <div class="post-content">
       
         <p>为循环而循环<br><a id="more"></a></p>
 <h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><p>对象无法直接被for循环遍历</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = [1, 2, 3, 4, 5];</span><br><span class="line">for (var i = 0; i &lt; a.length; i++) &#123;</span><br><span class="line">  console.log(a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="for-in"><a href="#for-in" class="headerlink" title="for in"></a>for in</h2><p>遍历的是键名，为普通对象设计，用于遍历数组不太合适</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj=&#123; name:&quot;ccc&quot;,age:18 &#125;;</span><br><span class="line">var key;</span><br><span class="line">for( key in obj)&#123;</span><br><span class="line">    console.log(key); // &apos;name&apos; &apos;age&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123; <span class="attr">name</span>:<span class="string">"ccc"</span>,<span class="attr">age</span>:<span class="number">18</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> key;</span><br><span class="line"><span class="keyword">for</span>( key <span class="keyword">in</span> obj)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key); <span class="comment">// 'name' 'age'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h2><p>只遍历数组中的每一项，不遍历键名，最简洁、最直接的遍历数组元素的语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1,2,3];</span><br><span class="line">for(var i of arr)&#123;</span><br><span class="line">  console.log(i);   // 1 2 3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">of</span> arr)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);   <span class="comment">// 1 2 3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>ES6中对象属性</p>
 <ul>
 <li><p>Object.keys()遍历属性<br>返回对象自身的所有（不含继承的）可枚举属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1,b:2,c:3&#125;</span><br><span class="line">Object.keys(obj)  // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="built_in">Object</span>.keys(obj)  <span class="comment">// ["a", "b", "c"]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Object.values遍历value</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1,b:2,c:3&#125;</span><br><span class="line">Object.values(obj)  //  [1,2,3]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="built_in">Object</span>.values(obj)  <span class="comment">//  [1,2,3]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Object.entries遍历键值对</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;a:1,b:2,c:3&#125;</span><br><span class="line">Object.entries(obj) //  [[&quot;a&quot;, 1],[&quot;b&quot;, 2],[&quot;c&quot;, 3]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="built_in">Object</span>.entries(obj) <span class="comment">//  [["a", 1],["b", 2],["c", 3]]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Object.getOwnPropertyNames遍历属性(枚举+不可枚举)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let obj=&#123;a:1,b:2,c:function()&#123;&#125;&#125;</span><br><span class="line">Object.getOwnPropertyNames(obj) // [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj=&#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>,<span class="attr">c</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;&#125;</span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(obj) <span class="comment">// ["a", "b", "c"]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="forEach"><a href="#forEach" class="headerlink" title="[].forEach()"></a>[].forEach()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var numbers=[1,3,5];</span><br><span class="line">numbers.forEach(function(value,index)&#123;</span><br><span class="line">    //value：表示元素的值</span><br><span class="line">    //index：表示元素的索引</span><br><span class="line">&#125;,第二个参数制定了回调函数内部的this的值，如果不传回调函数内部的this指向window);</span><br></pre></td></tr></table></figure>
+<h2 id="forEach"><a href="#forEach" class="headerlink" title="[].forEach()"></a>[].forEach()</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers=[<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>];</span><br><span class="line">numbers.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value,index</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//value：表示元素的值</span></span><br><span class="line">    <span class="comment">//index：表示元素的索引</span></span><br><span class="line">&#125;,第二个参数制定了回调函数内部的<span class="keyword">this</span>的值，如果不传回调函数内部的<span class="keyword">this</span>指向<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
 <p>对于空数组是不会执行回调函数的<br>无法遍历对象<br>无法在IE中使用，firefox和chrome实现了该方法<br>无法使用break，continue跳出循环，使用return时，效果和在for循环中使用continue一致</p>
 <h2 id="map"><a href="#map" class="headerlink" title="[].map()"></a>[].map()</h2><p>与forEach几乎无差别，map在于原数组被“映射”成对应新数组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var res = ary.map(function (item,index,input) &#123;</span><br><span class="line">     return item*10;</span><br><span class="line">&#125;,target)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> res = ary.map(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,input</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> item*<span class="number">10</span>;</span><br><span class="line">&#125;,target)</span><br></pre></td></tr></table></figure>
 <p>相当于把数组中的这一项改变成return的值，并不影响原来的数组，只是相当于把原数组克隆一份，改变克隆的这一份的数组中的对应项</p>
-<h2 id="jq中的-each"><a href="#jq中的-each" class="headerlink" title="jq中的$.each"></a>jq中的$.each</h2><p>遍历处理data，可以是数组、DOM、json等<br><code>$.each(Object|Array, function( index, value,array) {});</code><br><code>$(selector).each(function(index,element))</code>专门用来遍历DOMList<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var data = [</span><br><span class="line">    &#123;&quot;id&quot;:&quot;1&quot;,&quot;tagName&quot;:&quot;pink&quot;&#125;,</span><br><span class="line">    &#123;&quot;id&quot;:&quot;2&quot;,&quot;tagName&quot;:&quot;orange&quot;&#125;,</span><br><span class="line">    &#123;&quot;id&quot;:&quot;3&quot;,&quot;tagName&quot;:&quot;red&quot;&#125;</span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line">$.each(data, function(idx, obj) &#123;</span><br><span class="line">    console.log(obj.tagName); //&quot;pink&quot; &quot;orange&quot; &quot;red&quot;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="jq中的-each"><a href="#jq中的-each" class="headerlink" title="jq中的$.each"></a>jq中的$.each</h2><p>遍历处理data，可以是数组、DOM、json等<br><code>$.each(Object|Array, function( index, value,array) {});</code><br><code>$(selector).each(function(index,element))</code>专门用来遍历DOMList<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [</span><br><span class="line">    &#123;<span class="string">"id"</span>:<span class="string">"1"</span>,<span class="string">"tagName"</span>:<span class="string">"pink"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"id"</span>:<span class="string">"2"</span>,<span class="string">"tagName"</span>:<span class="string">"orange"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">"id"</span>:<span class="string">"3"</span>,<span class="string">"tagName"</span>:<span class="string">"red"</span>&#125;</span><br><span class="line">];</span><br><span class="line"> </span><br><span class="line">$.each(data, <span class="function"><span class="keyword">function</span>(<span class="params">idx, obj</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(obj.tagName); <span class="comment">//"pink" "orange" "red"</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -279,18 +190,6 @@
     
       
       
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="http://fountainyys.cn">fountainyys.cn</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="http://fountainyys.cn/2017/02/27/几种循环/">http://fountainyys.cn/2017/02/27/几种循环/</a>
-    </p>
-
-  </div>
 
 
 
@@ -331,10 +230,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
-
-      </div>  
-    
   </div>
 
 
@@ -343,58 +238,12 @@
 
       <footer id="footer" class="footer"> 
 
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:fountain_x@outlook.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://weibo.com/u/2874806624" class="iconfont icon-weibo" title="weibo"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://www.douban.com/people/114544231/?dt_dapp=1" class="iconfont icon-douban" title="douban"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-
-
-  </div>
-
  
 
 <div class="copyright">
   <span class="copyright-year">
     
     &copy; 
-     
-      2015 - 
     
     2019
    <span class="author">fountainyys.cn</span>
@@ -421,30 +270,11 @@
   
 
   
-   <script type="text/javascript">
-	(function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-  </script>
-
 
 
 
     
-  
 
-
-
-  
-  
 
 
 
@@ -459,21 +289,15 @@
   
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
-  
 
-  
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
   
 
 
     <script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
 <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
-<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v="></script>
 
   </body>
 </html>

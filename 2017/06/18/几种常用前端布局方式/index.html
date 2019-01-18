@@ -33,12 +33,10 @@
 
 
 
-  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
+  <link rel="alternate" href="/fountainpomelo.github.io/atom.xml" title="荒地">
 
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
 
 
 
@@ -46,16 +44,12 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
 
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
 
-
-
-<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=">
 
 
 
@@ -87,7 +81,7 @@
 
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":""};
 </script>
 
     <title> 几种常用前端布局方式 - 荒地 </title>
@@ -107,42 +101,6 @@
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     
-      <a href="/fountainpomelo.github.io/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/tags/">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
   </ul>
 </nav>
     
@@ -161,46 +119,6 @@
 </div>
 
 <nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/">
-            
-            
-              首页
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
-            
-            
-              归档
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
-            
-            
-              标签
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
-            
-            
-              关于
-            
-          </a>
-        </li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -230,13 +148,6 @@
 
     
     
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#flex"><span class="toc-text">flex弹性布局 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#static"><span class="toc-text">静态布局 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#guding"><span class="toc-text">固定页面宽度 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Liquid"><span class="toc-text">百分比布局（流式布局） </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Responsive"><span class="toc-text"> 响应式布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rem"><span class="toc-text">rem布局</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#viewport"><span class="toc-text">viewport缩放</span></a></li></ol>
-    </div>
-  </div>
-
 
 
     <div class="post-content">
@@ -254,7 +165,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="flex">flex弹性布局 </h1><br>给父元素设置 <code>display:flex</code>，容器就具有了两条轴，水平的主轴和垂直的交叉轴。<br><br>👉 <a href="https://www.css88.com/demo/flexbox-playground/" target="_blank" rel="noopener">flexbox在线演示</a><br><br><br>- flex结合单位vh，让容器充满整个屏幕高度或者剩余屏幕高度(上面的div根据内容自动高度，下面的div自动铺满剩余高度)<br>    - vh ： 相对于视口（viewport）的高度，视口被均分为100单位的vh；<br>    - 代码<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#box &#123;</span><br><span class="line">    height: 100vh; //充满整个屏幕高度</span><br><span class="line">    width: 100%;</span><br><span class="line">    display: flex;  //flex布局</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    background-color: antiquewhite</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.son1 &#123;</span><br><span class="line">    background-color: burlywood;</span><br><span class="line">    flex: 1; //自动铺满剩余高度</span><br><span class="line">    width: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>👇 再说说其他布局<br><br><h1 id="static">静态布局 </h1>
+<h1 id="flex">flex弹性布局 </h1><br>给父元素设置 <code>display:flex</code>，容器就具有了两条轴，水平的主轴和垂直的交叉轴。<br><br>👉 <a href="https://www.css88.com/demo/flexbox-playground/" target="_blank" rel="noopener">flexbox在线演示</a><br><br><br>- flex结合单位vh，让容器充满整个屏幕高度或者剩余屏幕高度(上面的div根据内容自动高度，下面的div自动铺满剩余高度)<br>    - vh ： 相对于视口（viewport）的高度，视口被均分为100单位的vh；<br>    - 代码<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#box</span> &#123;</span><br><span class="line">    height: 100vh; //充满整个屏幕高度</span><br><span class="line">    <span class="selector-tag">width</span>: 100%;</span><br><span class="line">    display: flex;  //flex布局</span><br><span class="line">    <span class="selector-tag">flex-direction</span>: <span class="selector-tag">column</span>;</span><br><span class="line">    <span class="selector-tag">background-color</span>: <span class="selector-tag">antiquewhite</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.son1</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: burlywood;</span><br><span class="line">    flex: 1; //自动铺满剩余高度</span><br><span class="line">    <span class="selector-tag">width</span>: 100%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>👇 再说说其他布局<br><br><h1 id="static">静态布局 </h1>
 
 <p>最原始的布局方式，就是你把窗口缩小，页面及字体不做变化，网页最外层容器有固定的大小（例如：<code>min-width:1000px;</code>），页面所有的内容以该容器为准，超出宽高的部分滚动。</p>
 <p>所以当pc端是这种布局，但是移动端也需要查看时，pc页面会显得很丑，真的不合适啊，通常又会给移动端设计一套，通常会限制最大的宽度，超过了则以最大宽度居中显示，即楼下👇所说的固定页面宽度的做法，用另一个域名呈现，一般管它叫做m站。</p>
@@ -271,7 +182,7 @@
 <li>单位<br>px 是一个绝对单位，特别死<br>em（font size of the element）相对于父元素的字体大小<br>rem (font size of the root element)单位是基于根元素&lt; html &gt;的字体大小，宽高内容都能自适应</li>
 </ul>
 <ul>
-<li>JS配合less去动态计算根元素的font-size，这样的好处是所有设备分辨率都能兼容适配<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">@charset &quot;utf-8&quot;;</span><br><span class="line"></span><br><span class="line">@psdWidth: 750;</span><br><span class="line">@baseSize: 100;</span><br><span class="line">@bs: 100rem;</span><br><span class="line">@deviceWidthList: 320px, 360px, 375px, 384px, 400px, 414px, 424px, 450px, 480px, 540px, 640px, 720px, 750px, 768px;</span><br><span class="line"></span><br><span class="line">// less fn</span><br><span class="line"></span><br><span class="line">.adapterFuc(@index) when (@index &lt;=length(@deviceWidthList)) &#123;  </span><br><span class="line">    @media (min-width: extract(@deviceWidthList, @index)) &#123;</span><br><span class="line">        html &#123;</span><br><span class="line">            font-size: extract(@deviceWidthList, @index)/@psdWidth*@baseSize !important;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    .adapterFuc(@index+1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    .adapterFuc(1);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    body&#123;</span><br><span class="line">        font-size: 24/@bs;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<li>JS配合less去动态计算根元素的font-size，这样的好处是所有设备分辨率都能兼容适配<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@charset</span> <span class="string">"utf-8"</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable">@psdWidth:</span> <span class="number">750</span>;</span><br><span class="line"><span class="variable">@baseSize:</span> <span class="number">100</span>;</span><br><span class="line"><span class="variable">@bs:</span> <span class="number">100rem</span>;</span><br><span class="line"><span class="variable">@deviceWidthList:</span> <span class="number">320px</span>, <span class="number">360px</span>, <span class="number">375px</span>, <span class="number">384px</span>, <span class="number">400px</span>, <span class="number">414px</span>, <span class="number">424px</span>, <span class="number">450px</span>, <span class="number">480px</span>, <span class="number">540px</span>, <span class="number">640px</span>, <span class="number">720px</span>, <span class="number">750px</span>, <span class="number">768px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// less fn</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.adapterFuc</span>(<span class="variable">@index</span>) <span class="keyword">when</span> (<span class="variable">@index</span> &lt;=length(<span class="variable">@deviceWidthList</span>)) &#123;  </span><br><span class="line">    <span class="keyword">@media</span> (<span class="attribute">min-width</span>: extract(<span class="variable">@deviceWidthList</span>, <span class="variable">@index</span>)) &#123;</span><br><span class="line">        <span class="selector-tag">html</span> &#123;</span><br><span class="line">            <span class="attribute">font-size</span>: extract(<span class="variable">@deviceWidthList</span>, <span class="variable">@index</span>)/<span class="variable">@psdWidth</span>*<span class="variable">@baseSize</span> <span class="meta">!important</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.adapterFuc</span>(<span class="variable">@index</span>+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.adapterFuc</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">body</span>&#123;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">24</span>/<span class="variable">@bs</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>此时您的less将生成一份在设备屏幕清单里对应html的font-size的css文件。</p>
@@ -322,18 +233,6 @@
       
       
 
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="http://fountainyys.cn">fountainyys.cn</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="http://fountainyys.cn/2017/06/18/几种常用前端布局方式/">http://fountainyys.cn/2017/06/18/几种常用前端布局方式/</a>
-    </p>
-
-  </div>
-
 
 
       
@@ -373,10 +272,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
-
-      </div>  
-    
   </div>
 
 
@@ -385,58 +280,12 @@
 
       <footer id="footer" class="footer"> 
 
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:fountain_x@outlook.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://weibo.com/u/2874806624" class="iconfont icon-weibo" title="weibo"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://www.douban.com/people/114544231/?dt_dapp=1" class="iconfont icon-douban" title="douban"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-
-
-  </div>
-
  
 
 <div class="copyright">
   <span class="copyright-year">
     
     &copy; 
-     
-      2015 - 
     
     2019
    <span class="author">fountainyys.cn</span>
@@ -463,30 +312,11 @@
   
 
   
-   <script type="text/javascript">
-	(function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-  </script>
-
 
 
 
     
-  
 
-
-
-  
-  
 
 
 
@@ -501,21 +331,15 @@
   
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
-  
 
-  
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
   
 
 
     <script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
 <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
-<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v="></script>
 
   </body>
 </html>

@@ -33,12 +33,10 @@
 
 
 
-  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
+  <link rel="alternate" href="/fountainpomelo.github.io/atom.xml" title="荒地">
 
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
 
 
 
@@ -46,16 +44,12 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
 
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
 
-
-
-<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=">
 
 
 
@@ -87,7 +81,7 @@
 
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":""};
 </script>
 
     <title> vuex简单使用 - 荒地 </title>
@@ -107,42 +101,6 @@
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     
-      <a href="/fountainpomelo.github.io/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/tags/">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
   </ul>
 </nav>
     
@@ -161,46 +119,6 @@
 </div>
 
 <nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/">
-            
-            
-              首页
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
-            
-            
-              归档
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
-            
-            
-              标签
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
-            
-            
-              关于
-            
-          </a>
-        </li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -230,13 +148,6 @@
 
     
     
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#state"><span class="toc-text">state</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mutations"><span class="toc-text">mutations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Getter"><span class="toc-text">Getter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Module"><span class="toc-text">Module</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Action"><span class="toc-text">Action</span></a></li></ol>
-    </div>
-  </div>
-
 
 
     <div class="post-content">
@@ -249,7 +160,7 @@
 <p>通常管用到<code>vuex</code>叫做放到<code>store</code>里面，<code>store</code>就是小卖部、小仓库，这篇文章是按照我写项目的逻辑来的，你需要把它看成一个整体。</p>
 <p>我的小demo 👉<a href="https://github.com/fountainpomelo/vuexsimpledemo" target="_blank" rel="noopener">请点击</a>左边</p>
 <p>下面是一份大致vuex的<code>index.js</code>文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">const state = &#123;</span><br><span class="line">    testMsg: &#123;</span><br><span class="line">        name: &apos;原始文本&apos;,</span><br><span class="line">        num: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const mutations = &#123;</span><br><span class="line">    changeTestMsg(state, newobj) &#123;</span><br><span class="line">        state.testMsg = newobj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const actions = &#123;</span><br><span class="line">        increment (context) &#123;</span><br><span class="line">          context.commit(&apos;changeChildText&apos;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">    state: state,</span><br><span class="line">    mutations: mutations,</span><br><span class="line">    actions: actions</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default store;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">    testMsg: &#123;</span><br><span class="line">        name: <span class="string">'原始文本'</span>,</span><br><span class="line">        num: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">    changeTestMsg(state, newobj) &#123;</span><br><span class="line">        state.testMsg = newobj;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">        increment (context) &#123;</span><br><span class="line">          context.commit(<span class="string">'changeChildText'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    state: state,</span><br><span class="line">    mutations: mutations,</span><br><span class="line">    actions: actions</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>🌰 首先表示页面有一个按钮<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;count&#125;&#125;</span><br><span class="line">&lt;button @click=&quot;add&quot;&gt;change fathernum&lt;/button&gt;</span><br></pre></td></tr></table></figure>
 </li>
@@ -279,18 +190,6 @@
     
       
       
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="http://fountainyys.cn">fountainyys.cn</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="http://fountainyys.cn/2017/11/24/vuex简单使用/">http://fountainyys.cn/2017/11/24/vuex简单使用/</a>
-    </p>
-
-  </div>
 
 
 
@@ -337,10 +236,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
-
-      </div>  
-    
   </div>
 
 
@@ -349,58 +244,12 @@
 
       <footer id="footer" class="footer"> 
 
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:fountain_x@outlook.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://weibo.com/u/2874806624" class="iconfont icon-weibo" title="weibo"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://www.douban.com/people/114544231/?dt_dapp=1" class="iconfont icon-douban" title="douban"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-
-
-  </div>
-
  
 
 <div class="copyright">
   <span class="copyright-year">
     
     &copy; 
-     
-      2015 - 
     
     2019
    <span class="author">fountainyys.cn</span>
@@ -427,30 +276,11 @@
   
 
   
-   <script type="text/javascript">
-	(function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-  </script>
-
 
 
 
     
-  
 
-
-
-  
-  
 
 
 
@@ -465,21 +295,15 @@
   
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
-  
 
-  
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
   
 
 
     <script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
 <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
-<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v="></script>
 
   </body>
 </html>

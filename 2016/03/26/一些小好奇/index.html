@@ -33,12 +33,10 @@
 
 
 
-  <link rel="alternate" href="/fountainpomelo.github.io/default" title="荒地">
+  <link rel="alternate" href="/fountainpomelo.github.io/atom.xml" title="荒地">
 
 
 
-
-  <link rel="shortcut icon" type="image/x-icon" href="/fountainpomelo.github.io/favicon.ico?v=2.10.1">
 
 
 
@@ -46,16 +44,12 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.css">
 
 
 
 
-  <link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/lib/nprogress/nprogress.min.css">
 
-
-
-<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=2.10.1">
+<link rel="stylesheet" type="text/css" href="/fountainpomelo.github.io/css/style.css?v=">
 
 
 
@@ -87,7 +81,7 @@
 
 
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+  window.config = {"leancloud":"","toc":"","fancybox":"","pjax":""};
 </script>
 
     <title> 一些小好奇 - 荒地 </title>
@@ -107,42 +101,6 @@
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
   <ul class="mobile-menu-list">
     
-      <a href="/fountainpomelo.github.io/">
-        <li class="mobile-menu-item">
-          
-          
-            首页
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            归档
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/tags/">
-        <li class="mobile-menu-item">
-          
-          
-            标签
-          
-        </li>
-      </a>
-    
-      <a href="/fountainpomelo.github.io/about">
-        <li class="mobile-menu-item">
-          
-          
-            关于
-          
-        </li>
-      </a>
-    
   </ul>
 </nav>
     
@@ -161,46 +119,6 @@
 </div>
 
 <nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/">
-            
-            
-              首页
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/archives/">
-            
-            
-              归档
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/tags/">
-            
-            
-              标签
-            
-          </a>
-        </li>
-      
-        <li class="menu-item">
-          <a class="menu-item-link" href="/fountainpomelo.github.io/about">
-            
-            
-              关于
-            
-          </a>
-        </li>
-      
-    </ul>
   
 </nav>
 </div>
@@ -230,22 +148,15 @@
 
     
     
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">文章目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#禁用选中和复制"><span class="toc-text">禁用选中和复制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFC"><span class="toc-text">BFC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax"><span class="toc-text">ajax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pjax"><span class="toc-text">pjax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#location"><span class="toc-text">location</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ins理发店式彩色进度条"><span class="toc-text">ins理发店式彩色进度条</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一键复制-execCommand"><span class="toc-text">一键复制 execCommand</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#canvas"><span class="toc-text">canvas</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#判断浏览器设备"><span class="toc-text">判断浏览器设备</span></a></li></ol>
-    </div>
-  </div>
-
 
 
     <div class="post-content">
       
         <p>刚开始学css对网页的好奇收集，这也许是最基本的一些操作，但对于当时不知道的我来说，还是这么新奇。<br><a id="more"></a></p>
 <h2 id="禁用选中和复制"><a href="#禁用选中和复制" class="headerlink" title="禁用选中和复制"></a>禁用选中和复制</h2><p>要想通过CSS禁用页面内容选中和复制操作，只需在<code>body</code>的样式中，增加如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-moz-user-select: none;</span><br><span class="line">-webkit-user-select: none;</span><br><span class="line">-ms-user-select: none;</span><br><span class="line">-khtml-user-select: none;</span><br><span class="line">user-select: none;</span><br></pre></td></tr></table></figure>
-<p>IE需要使用JS的<code>onSelected</code>事件了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dom.style.MozUserSelect = &apos;none&apos;;   //fixrox禁止选择的JS脚本</span><br><span class="line">dom.style.webkitUserSelect = &apos;none&apos;;</span><br><span class="line">if( document.all )&#123;                 //IE下禁止选择</span><br><span class="line">    dom.onselectstart=function()&#123;return false;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>禁止文本域<code>textarea</code>可拖拽的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">textarea&#123; resize:none;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">-moz-user-select</span>: <span class="selector-tag">none</span>;</span><br><span class="line"><span class="selector-tag">-webkit-user-select</span>: <span class="selector-tag">none</span>;</span><br><span class="line"><span class="selector-tag">-ms-user-select</span>: <span class="selector-tag">none</span>;</span><br><span class="line"><span class="selector-tag">-khtml-user-select</span>: <span class="selector-tag">none</span>;</span><br><span class="line"><span class="selector-tag">user-select</span>: <span class="selector-tag">none</span>;</span><br></pre></td></tr></table></figure>
+<p>IE需要使用JS的<code>onSelected</code>事件了。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dom.style.MozUserSelect = <span class="string">'none'</span>;   <span class="comment">//fixrox禁止选择的JS脚本</span></span><br><span class="line">dom.style.webkitUserSelect = <span class="string">'none'</span>;</span><br><span class="line"><span class="keyword">if</span>( <span class="built_in">document</span>.all )&#123;                 <span class="comment">//IE下禁止选择</span></span><br><span class="line">    dom.onselectstart=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>禁止文本域<code>textarea</code>可拖拽的方法：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">textarea</span>&#123; <span class="attribute">resize</span>:none;&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="BFC"><a href="#BFC" class="headerlink" title="BFC"></a>BFC</h2><p>一、常见定位方案</p>
 <p>在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:</p>
 <ul>
@@ -268,16 +179,16 @@
 </ul>
 <p>四、BFC 特性及应用</p>
 <ol>
-<li>同一个 BFC 下外边距会发生折叠<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">div&#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<li>同一个 BFC 下外边距会发生折叠<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">div&#123;</span></span><br><span class="line"><span class="undefined">    width: 100px;</span></span><br><span class="line"><span class="undefined">    height: 100px;</span></span><br><span class="line"><span class="undefined">    background: lightblue;</span></span><br><span class="line"><span class="undefined">    margin: 100px;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>从效果上看，因为两个 div 元素都处于同一个 BFC 容器下 (这里指 body 元素) 所以第一个 div 的下边距和第二个 div 的上边距发生了重叠，所以两个盒子之间距离只有 100px，而不是 200px。<br>首先这不是 CSS 的 bug，我们可以理解为一种规范，如果想要避免外边距的重叠，可以将其放在不同的 BFC 容器中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;container&quot;&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">.container &#123;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">&#125;</span><br><span class="line">p &#123;</span><br><span class="line">    width: 100px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background: lightblue;</span><br><span class="line">    margin: 100px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这时候，两个盒子边距就变成了 200px </p>
 <ol start="2">
 <li>BFC 可以包含浮动的元素（清除浮动）<br>我们都知道，浮动的元素会脱离普通文档流，来看下下面一个例子<br><div style="border: 1px solid #000;"><div style="width: 100px;height: 100px;background: #eee;float: left;"></div></div><br> <br><br> <br></li>
 </ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;border: 1px solid #000;&quot;&gt;</span><br><span class="line">    &lt;div style=&quot;width: 100px;height: 100px;background: #eee;float: left;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"border: 1px solid #000;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100px;height: 100px;background: #eee;float: left;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>由于容器内元素浮动，脱离了文档流，所以容器只剩下 2px 的边距高度。如果使触发容器的 BFC，那么容器将会包裹着浮动元素。</p>
 <div style="border: 1px solid #000;overflow: hidden"><div style="width: 100px;height: 100px;background: #eee;float: left;">width: 100px;height: 100px;background: #eee;float: left;</div>border: 1px solid #000;overflow: hidden</div>
 
@@ -336,30 +247,18 @@
 <p>设置或获取 location 或 URL 的 hostname 和 port 号码。<br><code>window.location.host</code><br>输出：<code>fountainyys.cn</code></p>
 <p>设置或获取 href 属性中跟在问号后面的部分。<br><code>window.location.search</code><br>输出：<code>?topicId=361</code></p>
 <p>window.location<br>属性                  描述<br>hash                设置或获取 href 属性中在井号“#”后面的分段。<br>host                 设置或获取 location 或 URL 的 hostname 和 port 号码。<br>hostname      设置或获取 location 或 URL 的主机名称部分。<br>href                  设置或获取整个 URL 为字符串。<br>pathname      设置或获取对象指定的文件名或路径。<br>port                  设置或获取与 URL 关联的端口号码。<br>protocol          设置或获取 URL 的协议部分。<br>search            设置或获取 href 属性中跟在问号后面的部分。</p>
-<h2 id="ins理发店式彩色进度条"><a href="#ins理发店式彩色进度条" class="headerlink" title="ins理发店式彩色进度条"></a>ins理发店式彩色进度条</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">height: 3px;</span><br><span class="line">background: #27c4f5 linear-gradient(to right,#27c4f5,#a307ba,#fd8d32,#70c050,#27c4f5);</span><br><span class="line">background-size: 500%;</span><br><span class="line">animation: 2s linear infinite LoadingBarProgress,.5s ease-outLoadingBarEnter;</span><br><span class="line">transform-origin: left;</span><br><span class="line">width: 100%;</span><br></pre></td></tr></table></figure>
+<h2 id="ins理发店式彩色进度条"><a href="#ins理发店式彩色进度条" class="headerlink" title="ins理发店式彩色进度条"></a>ins理发店式彩色进度条</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="attribute">height</span>: <span class="number">3px</span>;</span><br><span class="line"><span class="attribute">background</span>: <span class="number">#27c4f5</span> <span class="built_in">linear-gradient</span>(to right,#27c4f5,#a307ba,#fd8d32,#70c050,#27c4f5);</span><br><span class="line"><span class="attribute">background-size</span>: <span class="number">500%</span>;</span><br><span class="line"><span class="attribute">animation</span>: <span class="number">2s</span> linear infinite LoadingBarProgress,.<span class="number">5s</span> ease-outLoadingBarEnter;</span><br><span class="line"><span class="attribute">transform-origin</span>: left;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="一键复制-execCommand"><a href="#一键复制-execCommand" class="headerlink" title="一键复制 execCommand"></a>一键复制 execCommand</h2><p>点击复制后在右边<code>textarea</code> <code>CTRL + V</code></p>
 <p><input type="text" disabled="disabled" id="inputText" value="测试文本"><input type="button" id="btn" value="复制"><textarea rows="2" disabled="disabled"></textarea></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var btn = document.getElementById(&apos;btn&apos;);</span><br><span class="line"></span><br><span class="line">btn.addEventListener(&apos;click&apos;, function () &#123;</span><br><span class="line">    var inputText = document.getElementById(&apos;inputText&apos;);</span><br><span class="line">    var currentFocus = document.activeElement;</span><br><span class="line">    inputText.focus();</span><br><span class="line">    inputText.setSelectionRange(0, inputText.value.length);</span><br><span class="line">    document.execCommand(&apos;copy&apos;, true);</span><br><span class="line">    currentFocus.focus();</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">    var canvas = document.querySelector(&quot;canvas&quot;);</span><br><span class="line">    var ctx = canvas.getContext(&quot;2d&quot;);</span><br><span class="line">    ctx.fillStyle = &quot;grey&quot;;</span><br><span class="line">    ctx.fillRect(0, 0, 400, 400);</span><br><span class="line"></span><br><span class="line">    ctx.globalCompositeOperation = &quot;destination-out&quot;;</span><br><span class="line">//    ctx.globalAlpha = &quot;0.7&quot;;</span><br><span class="line">    $(&apos;canvas&apos;).on(&quot;mousedown&quot;, function () &#123;</span><br><span class="line">        $(&apos;canvas&apos;).on(&quot;mousemove&quot;, function (e) &#123;</span><br><span class="line"></span><br><span class="line">            var x = e.pageX - canvas.offsetLeft;</span><br><span class="line">            var y = e.pageY - canvas.offsetTop;</span><br><span class="line"></span><br><span class="line">            ctx.beginPath();</span><br><span class="line">//            ctx.fillStyle = &quot;black&quot;;</span><br><span class="line">            ctx.arc(x, y, 40, 0, 2 * Math.PI)</span><br><span class="line">            ctx.fill();</span><br><span class="line">            var data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;</span><br><span class="line">            console.log(data);</span><br><span class="line">            var sum = 0;</span><br><span class="line">            for(var i=3;i&lt;data.length;i+=4)&#123;</span><br><span class="line">                if( data[i]==0)&#123;</span><br><span class="line">                    sum++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(sum&gt;(canvas.width*canvas.height/2))&#123;</span><br><span class="line">                ctx.clearRect(0,0,canvas.width,canvas.height);</span><br><span class="line">                $(&quot;canvas&quot;).off(&quot;mousedown mouseup mousemove&quot;);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).on(&quot;mouseup&quot;, function () &#123;</span><br><span class="line">        $(&apos;canvas&apos;).off(&quot;mousemove&quot;)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="判断浏览器设备"><a href="#判断浏览器设备" class="headerlink" title="判断浏览器设备"></a>判断浏览器设备</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var browserVersions() &#123;</span><br><span class="line">      var u = navigator.userAgent;</span><br><span class="line">      return &#123;</span><br><span class="line">        // 移动终端浏览器版本信息</span><br><span class="line">        trident: u.indexOf(&quot;Trident&quot;) &gt; -1, // IE内核</span><br><span class="line">        presto: u.indexOf(&quot;Presto&quot;) &gt; -1, // Opera内核</span><br><span class="line">        webKit: u.indexOf(&quot;AppleWebKit&quot;) &gt; -1, // 苹果、谷歌内核</span><br><span class="line">        gecko: u.indexOf(&quot;Gecko&quot;) &gt; -1 &amp;&amp; u.indexOf(&quot;KHTML&quot;) == -1, // 火狐内核</span><br><span class="line">        mobile:</span><br><span class="line">          !!u.match(/AppleWebKit.*Mobile.*/) ||</span><br><span class="line">          (!!u.match(/AppleWebKit/) &amp;&amp;</span><br><span class="line">            u.indexOf(&quot;QIHU&quot;) &amp;&amp;</span><br><span class="line">            u.indexOf(&quot;Chrome&quot;) &lt; 0), // 是否为移动终端</span><br><span class="line">        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), // iOS终端</span><br><span class="line">        android: u.indexOf(&quot;Android&quot;) &gt; -1 || u.indexOf(&quot;Linux&quot;) &gt; -1, // Android 终端或者 UC 浏览器</span><br><span class="line">        iPhone: u.indexOf(&quot;iPhone&quot;) &gt; -1 || u.indexOf(&quot;Mac&quot;) &gt; -1, // 是否为 iPhone 或者 QQHD 浏览器</span><br><span class="line">        iPad: u.indexOf(&quot;iPad&quot;) &gt; -1, // 是否 iPad</span><br><span class="line">        webApp: u.indexOf(&quot;Safari&quot;) == -1, // 是否WEB应该程序，没有头部与底部。</span><br><span class="line">        ua: u</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> inputText = <span class="built_in">document</span>.getElementById(<span class="string">'inputText'</span>);</span><br><span class="line">    <span class="keyword">var</span> currentFocus = <span class="built_in">document</span>.activeElement;</span><br><span class="line">    inputText.focus();</span><br><span class="line">    inputText.setSelectionRange(<span class="number">0</span>, inputText.value.length);</span><br><span class="line">    <span class="built_in">document</span>.execCommand(<span class="string">'copy'</span>, <span class="literal">true</span>);</span><br><span class="line">    currentFocus.focus();</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> canvas = <span class="built_in">document</span>.querySelector(<span class="string">"canvas"</span>);</span><br><span class="line">    <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">    ctx.fillStyle = <span class="string">"grey"</span>;</span><br><span class="line">    ctx.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">400</span>, <span class="number">400</span>);</span><br><span class="line"></span><br><span class="line">    ctx.globalCompositeOperation = <span class="string">"destination-out"</span>;</span><br><span class="line"><span class="comment">//    ctx.globalAlpha = "0.7";</span></span><br><span class="line">    $(<span class="string">'canvas'</span>).on(<span class="string">"mousedown"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">'canvas'</span>).on(<span class="string">"mousemove"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> x = e.pageX - canvas.offsetLeft;</span><br><span class="line">            <span class="keyword">var</span> y = e.pageY - canvas.offsetTop;</span><br><span class="line"></span><br><span class="line">            ctx.beginPath();</span><br><span class="line"><span class="comment">//            ctx.fillStyle = "black";</span></span><br><span class="line">            ctx.arc(x, y, <span class="number">40</span>, <span class="number">0</span>, <span class="number">2</span> * <span class="built_in">Math</span>.PI)</span><br><span class="line">            ctx.fill();</span><br><span class="line">            <span class="keyword">var</span> data = ctx.getImageData(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height).data;</span><br><span class="line">            <span class="built_in">console</span>.log(data);</span><br><span class="line">            <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">3</span>;i&lt;data.length;i+=<span class="number">4</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>( data[i]==<span class="number">0</span>)&#123;</span><br><span class="line">                    sum++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(sum&gt;(canvas.width*canvas.height/<span class="number">2</span>))&#123;</span><br><span class="line">                ctx.clearRect(<span class="number">0</span>,<span class="number">0</span>,canvas.width,canvas.height);</span><br><span class="line">                $(<span class="string">"canvas"</span>).off(<span class="string">"mousedown mouseup mousemove"</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;).on(<span class="string">"mouseup"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        $(<span class="string">'canvas'</span>).off(<span class="string">"mousemove"</span>)</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="判断浏览器设备"><a href="#判断浏览器设备" class="headerlink" title="判断浏览器设备"></a>判断浏览器设备</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> browserVersions() &#123;</span><br><span class="line">      <span class="keyword">var</span> u = navigator.userAgent;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="comment">// 移动终端浏览器版本信息</span></span><br><span class="line">        trident: u.indexOf(<span class="string">"Trident"</span>) &gt; <span class="number">-1</span>, <span class="comment">// IE内核</span></span><br><span class="line">        presto: u.indexOf(<span class="string">"Presto"</span>) &gt; <span class="number">-1</span>, <span class="comment">// Opera内核</span></span><br><span class="line">        webKit: u.indexOf(<span class="string">"AppleWebKit"</span>) &gt; <span class="number">-1</span>, <span class="comment">// 苹果、谷歌内核</span></span><br><span class="line">        gecko: u.indexOf(<span class="string">"Gecko"</span>) &gt; <span class="number">-1</span> &amp;&amp; u.indexOf(<span class="string">"KHTML"</span>) == <span class="number">-1</span>, <span class="comment">// 火狐内核</span></span><br><span class="line">        mobile:</span><br><span class="line">          !!u.match(<span class="regexp">/AppleWebKit.*Mobile.*/</span>) ||</span><br><span class="line">          (!!u.match(<span class="regexp">/AppleWebKit/</span>) &amp;&amp;</span><br><span class="line">            u.indexOf(<span class="string">"QIHU"</span>) &amp;&amp;</span><br><span class="line">            u.indexOf(<span class="string">"Chrome"</span>) &lt; <span class="number">0</span>), <span class="comment">// 是否为移动终端</span></span><br><span class="line">        ios: !!u.match(<span class="regexp">/\(i[^;]+;( U;)? CPU.+Mac OS X/</span>), <span class="comment">// iOS终端</span></span><br><span class="line">        android: u.indexOf(<span class="string">"Android"</span>) &gt; <span class="number">-1</span> || u.indexOf(<span class="string">"Linux"</span>) &gt; <span class="number">-1</span>, <span class="comment">// Android 终端或者 UC 浏览器</span></span><br><span class="line">        iPhone: u.indexOf(<span class="string">"iPhone"</span>) &gt; <span class="number">-1</span> || u.indexOf(<span class="string">"Mac"</span>) &gt; <span class="number">-1</span>, <span class="comment">// 是否为 iPhone 或者 QQHD 浏览器</span></span><br><span class="line">        iPad: u.indexOf(<span class="string">"iPad"</span>) &gt; <span class="number">-1</span>, <span class="comment">// 是否 iPad</span></span><br><span class="line">        webApp: u.indexOf(<span class="string">"Safari"</span>) == <span class="number">-1</span>, <span class="comment">// 是否WEB应该程序，没有头部与底部。</span></span><br><span class="line">        ua: u</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
       
     </div>
 
     
       
       
-
-  <div class="post-copyright">
-    <p class="copyright-item">
-      <span>原文作者: </span>
-      <a href="http://fountainyys.cn">fountainyys.cn</a>
-    </p>
-    <p class="copyright-item">
-      <span>原文链接: </span>
-      <a href="http://fountainyys.cn/2016/03/26/一些小好奇/">http://fountainyys.cn/2016/03/26/一些小好奇/</a>
-    </p>
-
-  </div>
 
 
 
@@ -400,10 +299,6 @@
           
   <div class="comments" id="comments">
     
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTcwMy8xODI0OQ==">
-
-      </div>  
-    
   </div>
 
 
@@ -412,58 +307,12 @@
 
       <footer id="footer" class="footer"> 
 
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:fountain_x@outlook.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://weibo.com/u/2874806624" class="iconfont icon-weibo" title="weibo"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://www.douban.com/people/114544231/?dt_dapp=1" class="iconfont icon-douban" title="douban"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-
-
-  </div>
-
  
 
 <div class="copyright">
   <span class="copyright-year">
     
     &copy; 
-     
-      2015 - 
     
     2019
    <span class="author">fountainyys.cn</span>
@@ -490,30 +339,11 @@
   
 
   
-   <script type="text/javascript">
-	(function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-  </script>
-
 
 
 
     
-  
 
-
-
-  
-  
 
 
 
@@ -528,21 +358,15 @@
   
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
 
   
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/pjax/jquery.pjax.min.js"></script>
-  
 
-  
-    <script type="text/javascript" src="/fountainpomelo.github.io/lib/nprogress/nprogress.min.js"></script>
   
 
 
     <script src="http://cdn.bootcss.com/headroom/0.5.0/headroom.min.js"></script>
 <script src="http://res2.wx.qq.com/open/js/jweixin-1.4.0.js "></script>
-<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v=2.10.1"></script>
+<script type="text/javascript" src="/fountainpomelo.github.io/js/src/even.js?v="></script>
 
   </body>
 </html>
